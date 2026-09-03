@@ -10,9 +10,153 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           DASHBOARD LAYOUT OVERRIDE
+           ===================================================== */
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .portal {
+            width: 100%;
+            min-height: 100vh;
+            display: block !important;
+            position: relative;
+        }
+
+        /* LEFT SIDEBAR */
+
+        .portal .sidebar {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 250px !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            z-index: 1000;
+
+            display: flex !important;
+            flex-direction: column;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* RIGHT SIDE MAIN CONTENT */
+
+        .portal .main-area {
+            position: relative !important;
+
+            width: calc(100% - 250px) !important;
+            min-width: 0 !important;
+            min-height: 100vh;
+
+            margin-left: 250px !important;
+            padding: 0 !important;
+
+            overflow-x: hidden;
+        }
+
+        .portal .dashboard-header {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .portal .dashboard-content {
+            width: 100% !important;
+            max-width: none !important;
+            min-width: 0 !important;
+
+            margin: 0 !important;
+            padding: 32px !important;
+        }
+
+        /* ALL CONTENT MUST STAY INSIDE RIGHT SIDE */
+
+        .portal .welcome-card,
+        .portal .stats-grid,
+        .portal .dashboard-columns,
+        .portal .dashboard-card,
+        .portal .study-reminders,
+        .portal .announcement-card,
+        .portal .dashboard-footer {
+            width: 100%;
+            min-width: 0;
+            max-width: none;
+        }
+
+        .portal .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .portal .dashboard-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .portal .stat-card,
+        .portal .dashboard-card {
+            min-width: 0;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .portal .sidebar {
+                width: 250px !important;
+                transform: translateX(-100%);
+                transition: transform 0.25s ease;
+            }
+
+            .portal .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .portal .main-area {
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+
+            .portal .dashboard-content {
+                padding: 22px 18px !important;
+            }
+
+            .portal .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .portal .dashboard-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .portal .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal .dashboard-content {
+                padding: 16px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -66,7 +210,11 @@
 
         <div class="sidebar-bottom">
 
-            <button class="logout-button" id="logoutButton">
+            <button
+                class="logout-button"
+                id="logoutButton"
+                type="button"
+            >
                 Logout
             </button>
 
@@ -77,10 +225,13 @@
 
     <!-- MOBILE OVERLAY -->
 
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
 
 
-    <!-- MAIN AREA -->
+    <!-- RIGHT SIDE MAIN AREA -->
 
     <main class="main-area">
 
@@ -90,16 +241,23 @@
 
             <div class="header-left">
 
-                <button class="menu-toggle" id="menuToggle">
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open menu"
+                >
                     ☰
                 </button>
 
                 <div>
+
                     <span class="header-label">
                         STUDENT PORTAL
                     </span>
 
                     <h2>Dashboard</h2>
+
                 </div>
 
             </div>
@@ -121,11 +279,11 @@
         </header>
 
 
-        <!-- DASHBOARD CONTENT -->
+        <!-- CONTENT -->
 
         <section class="dashboard-content">
 
-            <!-- WELCOME CARD -->
+            <!-- WELCOME -->
 
             <div class="welcome-card">
 
@@ -149,9 +307,13 @@
 
                 <div class="welcome-date">
 
-                    <span>ACADEMIC YEAR</span>
+                    <span>
+                        ACADEMIC YEAR
+                    </span>
 
-                    <strong>2026</strong>
+                    <strong>
+                        2026
+                    </strong>
 
                 </div>
 
@@ -169,8 +331,13 @@
                     </div>
 
                     <div>
-                        <span>Enrolled Courses</span>
-                        <strong>06</strong>
+                        <span>
+                            Enrolled Courses
+                        </span>
+
+                        <strong>
+                            06
+                        </strong>
                     </div>
 
                 </div>
@@ -183,8 +350,13 @@
                     </div>
 
                     <div>
-                        <span>Assignments</span>
-                        <strong>04</strong>
+                        <span>
+                            Assignments
+                        </span>
+
+                        <strong>
+                            04
+                        </strong>
                     </div>
 
                 </div>
@@ -197,8 +369,13 @@
                     </div>
 
                     <div>
-                        <span>Attendance</span>
-                        <strong>92%</strong>
+                        <span>
+                            Attendance
+                        </span>
+
+                        <strong>
+                            92%
+                        </strong>
                     </div>
 
                 </div>
@@ -211,8 +388,13 @@
                     </div>
 
                     <div>
-                        <span>Current GPA</span>
-                        <strong>3.38</strong>
+                        <span>
+                            Current GPA
+                        </span>
+
+                        <strong>
+                            3.38
+                        </strong>
                     </div>
 
                 </div>
@@ -220,7 +402,7 @@
             </div>
 
 
-            <!-- DASHBOARD COLUMNS -->
+            <!-- CLASSES + ASSIGNMENTS -->
 
             <div class="dashboard-columns">
 
@@ -231,11 +413,15 @@
                     <div class="card-heading">
 
                         <div>
+
                             <span class="section-label">
                                 SCHEDULE
                             </span>
 
-                            <h2>Today's Classes</h2>
+                            <h2>
+                                Today's Classes
+                            </h2>
+
                         </div>
 
                         <a href="timetable.html">
@@ -250,11 +436,19 @@
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>09:00</strong>
-                                <span>AM</span>
+
+                                <strong>
+                                    09:00
+                                </strong>
+
+                                <span>
+                                    AM
+                                </span>
+
                             </div>
 
                             <div class="class-info">
+
                                 <h3>
                                     Advanced Database Systems
                                 </h3>
@@ -262,6 +456,7 @@
                                 <p>
                                     Room 204 • Dr. Ahmed
                                 </p>
+
                             </div>
 
                         </div>
@@ -270,11 +465,19 @@
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>11:00</strong>
-                                <span>AM</span>
+
+                                <strong>
+                                    11:00
+                                </strong>
+
+                                <span>
+                                    AM
+                                </span>
+
                             </div>
 
                             <div class="class-info">
+
                                 <h3>
                                     Artificial Intelligence
                                 </h3>
@@ -282,6 +485,7 @@
                                 <p>
                                     Lab 03 • Dr. Hassan
                                 </p>
+
                             </div>
 
                         </div>
@@ -290,11 +494,19 @@
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>02:00</strong>
-                                <span>PM</span>
+
+                                <strong>
+                                    02:00
+                                </strong>
+
+                                <span>
+                                    PM
+                                </span>
+
                             </div>
 
                             <div class="class-info">
+
                                 <h3>
                                     Software Engineering
                                 </h3>
@@ -302,6 +514,7 @@
                                 <p>
                                     Room 108 • Ms. Sara
                                 </p>
+
                             </div>
 
                         </div>
@@ -318,11 +531,15 @@
                     <div class="card-heading">
 
                         <div>
+
                             <span class="section-label">
                                 DEADLINES
                             </span>
 
-                            <h2>Upcoming Assignments</h2>
+                            <h2>
+                                Upcoming Assignments
+                            </h2>
+
                         </div>
 
                         <a href="assignments.html">
@@ -337,8 +554,15 @@
                         <div class="assignment-item">
 
                             <div class="assignment-date">
-                                <strong>08</strong>
-                                <span>SEP</span>
+
+                                <strong>
+                                    08
+                                </strong>
+
+                                <span>
+                                    SEP
+                                </span>
+
                             </div>
 
                             <div class="assignment-info">
@@ -359,8 +583,15 @@
                         <div class="assignment-item">
 
                             <div class="assignment-date">
-                                <strong>11</strong>
-                                <span>SEP</span>
+
+                                <strong>
+                                    11
+                                </strong>
+
+                                <span>
+                                    SEP
+                                </span>
+
                             </div>
 
                             <div class="assignment-info">
@@ -381,8 +612,15 @@
                         <div class="assignment-item">
 
                             <div class="assignment-date">
-                                <strong>15</strong>
-                                <span>SEP</span>
+
+                                <strong>
+                                    15
+                                </strong>
+
+                                <span>
+                                    SEP
+                                </span>
+
                             </div>
 
                             <div class="assignment-info">
@@ -418,21 +656,22 @@
                             PERSONAL ORGANIZER
                         </span>
 
-                        <h2>Study Reminders</h2>
+                        <h2>
+                            Study Reminders
+                        </h2>
 
                     </div>
 
                     <button
                         class="add-reminder-button"
                         id="addReminderButton"
+                        type="button"
                     >
                         + Add Reminder
                     </button>
 
                 </div>
 
-
-                <!-- REMINDER FORM -->
 
                 <div
                     class="reminder-form"
@@ -462,8 +701,6 @@
 
                 </div>
 
-
-                <!-- REMINDERS -->
 
                 <div
                     class="reminders-list"
@@ -543,7 +780,9 @@
                             ACADEMIC OVERVIEW
                         </span>
 
-                        <h2>Semester Progress</h2>
+                        <h2>
+                            Semester Progress
+                        </h2>
 
                     </div>
 
@@ -555,15 +794,24 @@
                     <div class="progress-item">
 
                         <div class="progress-heading">
-                            <span>Overall Progress</span>
-                            <strong>68%</strong>
+
+                            <span>
+                                Overall Progress
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
                         </div>
 
                         <div class="progress-track">
+
                             <div
                                 class="progress-fill"
                                 style="width: 68%;"
                             ></div>
+
                         </div>
 
                     </div>
@@ -572,15 +820,24 @@
                     <div class="progress-item">
 
                         <div class="progress-heading">
-                            <span>Assignments</span>
-                            <strong>75%</strong>
+
+                            <span>
+                                Assignments
+                            </span>
+
+                            <strong>
+                                75%
+                            </strong>
+
                         </div>
 
                         <div class="progress-track">
+
                             <div
                                 class="progress-fill"
                                 style="width: 75%;"
                             ></div>
+
                         </div>
 
                     </div>
@@ -589,15 +846,24 @@
                     <div class="progress-item">
 
                         <div class="progress-heading">
-                            <span>Attendance</span>
-                            <strong>92%</strong>
+
+                            <span>
+                                Attendance
+                            </span>
+
+                            <strong>
+                                92%
+                            </strong>
+
                         </div>
 
                         <div class="progress-track">
+
                             <div
                                 class="progress-fill"
                                 style="width: 92%;"
                             ></div>
+
                         </div>
 
                     </div>
@@ -606,15 +872,24 @@
                     <div class="progress-item">
 
                         <div class="progress-heading">
-                            <span>Course Completion</span>
-                            <strong>68%</strong>
+
+                            <span>
+                                Course Completion
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
                         </div>
 
                         <div class="progress-track">
+
                             <div
                                 class="progress-fill"
                                 style="width: 68%;"
                             ></div>
+
                         </div>
 
                     </div>
@@ -624,7 +899,7 @@
             </div>
 
 
-            <!-- LATEST ANNOUNCEMENT -->
+            <!-- ANNOUNCEMENT -->
 
             <div class="dashboard-card announcement-card">
 
