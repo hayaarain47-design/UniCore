@@ -456,3 +456,155 @@ if (
 ) {
     window.location.href = "dashboard.html";
 }
+/* =========================================
+   STUDY REMINDERS
+========================================= */
+
+const addReminderButton =
+    document.getElementById("addReminderButton");
+
+const reminderForm =
+    document.getElementById("reminderForm");
+
+const reminderInput =
+    document.getElementById("reminderInput");
+
+const saveReminderButton =
+    document.getElementById("saveReminderButton");
+
+const cancelReminderButton =
+    document.getElementById("cancelReminderButton");
+
+const remindersList =
+    document.getElementById("remindersList");
+
+
+/* OPEN REMINDER FORM */
+
+if (addReminderButton) {
+
+    addReminderButton.addEventListener("click", function () {
+
+        reminderForm.classList.add("show");
+
+        reminderInput.focus();
+
+    });
+
+}
+
+
+/* CANCEL */
+
+if (cancelReminderButton) {
+
+    cancelReminderButton.addEventListener("click", function () {
+
+        reminderInput.value = "";
+
+        reminderForm.classList.remove("show");
+
+    });
+
+}
+
+
+/* SAVE REMINDER */
+
+if (saveReminderButton) {
+
+    saveReminderButton.addEventListener("click", function () {
+
+        const reminderText =
+            reminderInput.value.trim();
+
+
+        if (reminderText === "") {
+
+            alert("Please enter a study reminder.");
+
+            reminderInput.focus();
+
+            return;
+
+        }
+
+
+        const reminderItem =
+            document.createElement("div");
+
+        reminderItem.className = "reminder-item";
+
+
+        reminderItem.innerHTML = `
+            <label>
+                <input type="checkbox">
+                <span>${reminderText}</span>
+            </label>
+
+            <span class="reminder-time">
+                Today
+            </span>
+        `;
+
+
+        remindersList.appendChild(reminderItem);
+
+
+        reminderInput.value = "";
+
+        reminderForm.classList.remove("show");
+
+
+        addReminderCheckbox(
+            reminderItem.querySelector(
+                'input[type="checkbox"]'
+            )
+        );
+
+    });
+
+}
+
+
+/* CHECKBOX COMPLETION */
+
+function addReminderCheckbox(checkbox) {
+
+    if (!checkbox) {
+        return;
+    }
+
+
+    checkbox.addEventListener("change", function () {
+
+        const reminderItem =
+            checkbox.closest(".reminder-item");
+
+
+        if (checkbox.checked) {
+
+            reminderItem.classList.add("completed");
+
+        } else {
+
+            reminderItem.classList.remove("completed");
+
+        }
+
+    });
+
+}
+
+
+/* EXISTING REMINDERS */
+
+document
+    .querySelectorAll(
+        '.reminder-item input[type="checkbox"]'
+    )
+    .forEach(function (checkbox) {
+
+        addReminderCheckbox(checkbox);
+
+    });
