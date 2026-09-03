@@ -608,3 +608,93 @@ document
         addReminderCheckbox(checkbox);
 
     });
+/* ================================
+   HELP & SUPPORT FUNCTIONALITY
+================================ */
+
+// FAQ accordion
+
+const faqQuestions =
+    document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function (question) {
+
+    question.addEventListener("click", function () {
+
+        const faqItem =
+            question.closest(".faq-item");
+
+        faqItem.classList.toggle("open");
+
+    });
+
+});
+
+
+// Quick support buttons
+
+const helpActionButtons =
+    document.querySelectorAll(".help-action");
+
+helpActionButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const targetId =
+            button.getAttribute("data-target");
+
+        const targetSection =
+            document.getElementById(targetId);
+
+        if (targetSection) {
+
+            targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+});
+
+
+// Support form
+
+const supportForm =
+    document.getElementById("supportForm");
+
+if (supportForm) {
+
+    supportForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("supportName").value.trim();
+
+        const message =
+            document.getElementById("supportMessage").value.trim();
+
+        if (name === "" || message === "") {
+
+            alert(
+                "Please complete all required fields."
+            );
+
+            return;
+        }
+
+        alert(
+            "Thank you, " +
+            name +
+            "!\n\n" +
+            "Your support request has been submitted successfully."
+        );
+
+        supportForm.reset();
+
+    });
+
+}
