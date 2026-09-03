@@ -296,3 +296,14 @@ if (printTimetable) {
         window.print();
     });
 }
+// =========================================
+// RESULTS PRINT
+// =========================================
+
+const printResults = document.getElementById("printResults");
+
+if (printResults) {
+    printResults.addEventListener("click", function () {
+        window.print();
+    });
+}
