@@ -1,138 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Results | UniCore</title>
+    <title>Academic Results | UniCore</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="dashboard-layout">
+<div class="portal">
 
-        <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
 
-        <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-mark">U</div>
 
-            <div class="sidebar-brand">
-                <h1>UniCore</h1>
+            <div>
+                <h2>UniCore</h2>
                 <span>Student Portal</span>
             </div>
+        </div>
 
-            <nav class="sidebar-nav">
+        <nav class="sidebar-nav">
 
-                <a href="dashboard.html" class="nav-link">
-                    <span class="nav-icon">⌂</span>
-                    <span>Dashboard</span>
-                </a>
+            <p class="nav-title">MAIN MENU</p>
 
-                <a href="courses.html" class="nav-link">
-                    <span class="nav-icon">▣</span>
-                    <span>Courses</span>
-                </a>
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Dashboard
+            </a>
 
-                <a href="assignments.html" class="nav-link">
-                    <span class="nav-icon">✓</span>
-                    <span>Assignments</span>
-                </a>
+            <a href="courses.html">
+                <span>▣</span>
+                Courses
+            </a>
 
-                <a href="timetable.html" class="nav-link">
-                    <span class="nav-icon">◷</span>
-                    <span>Timetable</span>
-                </a>
+            <a href="assignments.html">
+                <span>✓</span>
+                Assignments
+            </a>
 
-                <a href="results.html" class="nav-link active">
-                    <span class="nav-icon">▤</span>
-                    <span>Results</span>
-                </a>
+            <a href="timetable.html">
+                <span>▦</span>
+                Timetable
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">●</span>
-                    <span>Announcements</span>
-                </a>
+            <a href="results.html" class="active">
+                <span>▤</span>
+                Results
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◌</span>
-                    <span>Profile</span>
-                </a>
+            <a href="announcements.html">
+                <span>◉</span>
+                Announcements
+            </a>
 
-            </nav>
+            <p class="nav-title">ACCOUNT</p>
 
-            <div class="sidebar-bottom">
+            <a href="profile.html">
+                <span>◎</span>
+                Profile
+            </a>
 
-                <a href="#" class="help-link">
-                    Need Help?
-                </a>
+            <a href="help.html">
+                <span>?</span>
+                Help & Support
+            </a>
 
-                <button class="logout-button" id="logoutBtn">
-                    Logout
-                </button>
+        </nav>
 
+        <div class="sidebar-bottom">
+
+            <button class="logout-button" id="logoutButton">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <div class="header-title">
+                <span>STUDENT PORTAL</span>
+                <h1>Academic Results</h1>
             </div>
 
-        </aside>
+            <div class="header-profile">
 
-
-        <!-- MOBILE OVERLAY -->
-
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-
-        <!-- MAIN CONTENT -->
-
-        <main class="dashboard-content">
-
-            <!-- HEADER -->
-
-            <header class="dashboard-header">
-
-                <div class="header-left">
-
-                    <button class="menu-toggle" id="menuToggle">
-                        ☰
-                    </button>
-
-                    <div>
-                        <span class="header-label">STUDENT PORTAL</span>
-                        <h2>Results</h2>
+                <div class="mini-profile">
+                    <div class="mini-avatar">
+                        T
                     </div>
 
-                </div>
-
-                <div class="header-profile">
-
-                    <div class="mini-profile">
+                    <div>
                         <strong>Tooba Waheed</strong>
                         <span>Computer Science</span>
                     </div>
-
-                    <div class="profile-avatar">
-                        TW
-                    </div>
-
                 </div>
 
-            </header>
+            </div>
+
+        </header>
 
 
-            <!-- PAGE INTRO -->
+        <!-- RESULTS CONTENT -->
+        <section class="dashboard-content">
 
-            <section class="results-intro">
+            <!-- INTRO -->
+            <div class="results-intro">
 
                 <div>
+                    <span class="section-label">ACADEMIC RECORD</span>
+
                     <h2>Academic Results</h2>
-                    <p>View your semester performance and course grades.</p>
+
+                    <p>
+                        View your semester performance, grades,
+                        credits and current academic standing.
+                    </p>
                 </div>
 
                 <div class="results-semester">
@@ -140,59 +149,92 @@
                     <strong>Fall 2026</strong>
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- RESULT SUMMARY -->
-
-            <section class="results-summary">
-
-                <div class="result-summary-box">
-                    <span>Current GPA</span>
-                    <strong>3.38</strong>
-                    <small>Out of 4.00</small>
-                </div>
+            <!-- SUMMARY -->
+            <div class="results-summary">
 
                 <div class="result-summary-box">
-                    <span>Completed Credits</span>
-                    <strong>03</strong>
-                    <small>Credits</small>
+
+                    <div class="summary-icon">
+                        GPA
+                    </div>
+
+                    <div>
+                        <span>Current GPA</span>
+                        <strong>3.38 / 4.00</strong>
+                    </div>
+
                 </div>
+
 
                 <div class="result-summary-box">
-                    <span>Current Courses</span>
-                    <strong>05</strong>
-                    <small>In Progress</small>
+
+                    <div class="summary-icon">
+                        CR
+                    </div>
+
+                    <div>
+                        <span>Completed Credits</span>
+                        <strong>03</strong>
+                    </div>
+
                 </div>
+
 
                 <div class="result-summary-box">
-                    <span>Academic Standing</span>
-                    <strong>Good</strong>
-                    <small>Current Status</small>
+
+                    <div class="summary-icon">
+                        C
+                    </div>
+
+                    <div>
+                        <span>Current Courses</span>
+                        <strong>05</strong>
+                    </div>
+
                 </div>
 
-            </section>
+
+                <div class="result-summary-box">
+
+                    <div class="summary-icon">
+                        A
+                    </div>
+
+                    <div>
+                        <span>Academic Standing</span>
+                        <strong>Good</strong>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-            <!-- SEMESTER PERFORMANCE -->
-
+            <!-- PERFORMANCE -->
             <section class="semester-performance">
 
                 <div class="results-heading">
 
                     <div>
-                        <h3>Fall 2026 Performance</h3>
-                        <p>Current academic performance by course.</p>
+                        <span class="section-label">
+                            FALL 2026
+                        </span>
+
+                        <h3>Semester Performance</h3>
                     </div>
 
-                    <button class="print-results" id="printResults">
+                    <button
+                        class="print-results"
+                        id="printResults"
+                    >
                         Print Results
                     </button>
 
                 </div>
 
-
-                <!-- RESULT TABLE -->
 
                 <div class="results-table-wrapper">
 
@@ -216,8 +258,12 @@
                             <tr>
 
                                 <td>
-                                    <strong>Advanced Database Systems</strong>
-                                    <span>CS-601</span>
+                                    <strong>
+                                        Advanced Database Systems
+                                    </strong>
+                                    <span>
+                                        CS-601
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -244,8 +290,12 @@
                             <tr>
 
                                 <td>
-                                    <strong>Artificial Intelligence</strong>
-                                    <span>CS-603</span>
+                                    <strong>
+                                        Artificial Intelligence
+                                    </strong>
+                                    <span>
+                                        CS-603
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -272,8 +322,12 @@
                             <tr>
 
                                 <td>
-                                    <strong>Software Engineering</strong>
-                                    <span>CS-605</span>
+                                    <strong>
+                                        Software Engineering
+                                    </strong>
+                                    <span>
+                                        CS-605
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -300,8 +354,12 @@
                             <tr>
 
                                 <td>
-                                    <strong>Computer Networks</strong>
-                                    <span>CS-607</span>
+                                    <strong>
+                                        Computer Networks
+                                    </strong>
+                                    <span>
+                                        CS-607
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -328,8 +386,12 @@
                             <tr>
 
                                 <td>
-                                    <strong>Research Methodology</strong>
-                                    <span>CS-609</span>
+                                    <strong>
+                                        Research Methodology
+                                    </strong>
+                                    <span>
+                                        CS-609
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -353,11 +415,15 @@
                             </tr>
 
 
-                            <tr class="completed-result">
+                            <tr>
 
                                 <td>
-                                    <strong>Advanced Programming</strong>
-                                    <span>CS-611</span>
+                                    <strong>
+                                        Advanced Programming
+                                    </strong>
+                                    <span>
+                                        CS-611
+                                    </span>
                                 </td>
 
                                 <td>3</td>
@@ -389,66 +455,101 @@
             </section>
 
 
-            <!-- GPA PROGRESS -->
-
+            <!-- GPA SECTION -->
             <section class="gpa-section">
 
                 <div class="gpa-card">
 
                     <div class="gpa-card-heading">
+
                         <div>
-                            <h3>GPA Progress</h3>
-                            <p>Your current academic performance.</p>
+                            <span class="section-label">
+                                ACADEMIC PERFORMANCE
+                            </span>
+
+                            <h3>Current GPA</h3>
                         </div>
 
-                        <strong>3.38 / 4.00</strong>
+                        <strong>
+                            3.38
+                            <small>/ 4.00</small>
+                        </strong>
+
                     </div>
+
 
                     <div class="gpa-progress-track">
-                        <div class="gpa-progress-fill"></div>
+
+                        <div
+                            class="gpa-progress-fill"
+                            style="width: 84.5%;"
+                        ></div>
+
                     </div>
+
 
                     <div class="gpa-scale">
+
                         <span>0.00</span>
+
                         <span>1.00</span>
+
                         <span>2.00</span>
+
                         <span>3.00</span>
+
                         <span>4.00</span>
+
                     </div>
-
-                </div>
-
-
-                <div class="performance-note">
-
-                    <span class="note-label">ACADEMIC NOTE</span>
-
-                    <h4>Keep building your progress.</h4>
-
-                    <p>
-                        Stay consistent with your coursework,
-                        assignments and attendance to maintain
-                        strong academic performance.
-                    </p>
 
                 </div>
 
             </section>
 
 
-            <!-- FOOTER -->
+            <!-- NOTE -->
+            <div class="performance-note">
 
-            <footer class="dashboard-footer">
-                <p>© 2026 UniCore Student Portal. Learn. Grow. Achieve.</p>
-            </footer>
+                <div class="note-icon">
+                    i
+                </div>
 
-        </main>
+                <div>
+                    <strong>Academic Note</strong>
 
-    </div>
+                    <p>
+                        Your current academic standing is
+                        <strong>Good</strong>. Keep track of your
+                        assignments, attendance and upcoming
+                        assessments to maintain your progress.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
 
 
-    <script src="script.js"></script>
+        <!-- FOOTER -->
+        <footer class="portal-footer">
+
+            <p>
+                © 2026 UniCore Student Portal.
+                All rights reserved.
+            </p>
+
+            <span>
+                Learn. Grow. Achieve.
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
