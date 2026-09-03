@@ -1,23 +1,131 @@
-/* =========================================================
-   UNICORE STUDENT PORTAL
-   Complete JavaScript
-   ========================================================= */
+/* =========================================
+   UniCore - Student Portal JavaScript
+   ========================================= */
 
 
-/* =========================================================
-   GLOBAL PAGE INFORMATION
-   ========================================================= */
+/* =========================================
+   1. LOGIN SYSTEM
+   ========================================= */
 
-const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+const loginForm = document.getElementById("loginForm");
 
-const isLoggedIn =
-    localStorage.getItem("unicoreLoggedIn") === "true";
+if (loginForm) {
+
+    // Show / Hide Password
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener("click", function () {
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                togglePassword.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                togglePassword.textContent = "Show";
+            }
+
+        });
+    }
 
 
-/* =========================================================
-   LOGIN PROTECTION
-   ========================================================= */
+    // Forgot Password
+    const forgotPassword = document.getElementById("forgotPassword");
+
+    if (forgotPassword) {
+        forgotPassword.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            alert(
+                "Password Reset\n\n" +
+                "For this demo portal, please contact the university administration."
+            );
+        });
+    }
+
+
+    // Login
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const loginMessage = document.getElementById("loginMessage");
+
+        const email = emailInput ? emailInput.value.trim() : "";
+        const password = passwordInput ? passwordInput.value.trim() : "";
+
+        if (email === "" || password === "") {
+
+            if (loginMessage) {
+                loginMessage.textContent =
+                    "Please enter your email and password.";
+            }
+
+            return;
+        }
+
+
+        // Save login status
+        localStorage.setItem("unicoreLoggedIn", "true");
+        localStorage.setItem("unicoreStudentEmail", email);
+
+
+        // Remember Me
+        const rememberMe = document.getElementById("rememberMe");
+
+        if (rememberMe && rememberMe.checked) {
+            localStorage.setItem("unicoreRememberMe", "true");
+        } else {
+            localStorage.removeItem("unicoreRememberMe");
+        }
+
+
+        if (loginMessage) {
+            loginMessage.textContent =
+                "Login successful. Redirecting...";
+        }
+
+
+        setTimeout(function () {
+            window.location.href = "dashboard.html";
+        }, 700);
+
+    });
+
+}
+
+
+/* =========================================
+   2. REDIRECT LOGGED-IN USER
+   ========================================= */
+
+if (
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname.endsWith("/")
+) {
+
+    const isLoggedIn =
+        localStorage.getItem("unicoreLoggedIn") === "true";
+
+    if (isLoggedIn) {
+
+        const loginFormExists =
+            document.getElementById("loginForm");
+
+        if (loginFormExists) {
+            // User can still see login page.
+            // No automatic redirect here.
+        }
+    }
+}
+
+
+/* =========================================
+   3. PROTECT PORTAL PAGES
+   ========================================= */
 
 const protectedPages = [
     "dashboard.html",
@@ -30,6 +138,12 @@ const protectedPages = [
     "help.html"
 ];
 
+const currentPage =
+    window.location.pathname.split("/").pop();
+
+const isLoggedIn =
+    localStorage.getItem("unicoreLoggedIn") === "true";
+
 if (
     protectedPages.includes(currentPage) &&
     !isLoggedIn
@@ -38,176 +152,9 @@ if (
 }
 
 
-/* =========================================================
-   LOGIN PAGE REDIRECT
-   ========================================================= */
-
-if (
-    (currentPage === "" || currentPage === "index.html") &&
-    isLoggedIn
-) {
-    window.location.href = "dashboard.html";
-}
-
-
-/* =========================================================
-   UNICORE LOGIN
-   ========================================================= */
-
-const loginForm =
-    document.getElementById("loginForm");
-
-const loginMessage =
-    document.getElementById("loginMessage");
-
-if (loginForm) {
-
-    loginForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const emailInput =
-            document.getElementById("email");
-
-        const passwordInput =
-            document.getElementById("password");
-
-        const rememberMe =
-            document.getElementById("rememberMe");
-
-        const email =
-            emailInput ? emailInput.value.trim() : "";
-
-        const password =
-            passwordInput ? passwordInput.value.trim() : "";
-
-        if (email === "" || password === "") {
-
-            if (loginMessage) {
-                loginMessage.textContent =
-                    "Please enter your email and password.";
-            }
-
-            return;
-        }
-
-        /*
-         * Demo authentication.
-         * Any non-empty email/password is accepted.
-         */
-
-        localStorage.setItem(
-            "unicoreLoggedIn",
-            "true"
-        );
-
-        localStorage.setItem(
-            "unicoreStudentEmail",
-            email
-        );
-
-        if (rememberMe && rememberMe.checked) {
-
-            localStorage.setItem(
-                "unicoreRememberMe",
-                "true"
-            );
-
-        } else {
-
-            localStorage.removeItem(
-                "unicoreRememberMe"
-            );
-
-        }
-
-        if (loginMessage) {
-
-            loginMessage.textContent =
-                "Login successful. Opening dashboard...";
-
-        }
-
-        setTimeout(function () {
-
-            window.location.href =
-                "dashboard.html";
-
-        }, 700);
-
-    });
-
-}
-
-
-/* =========================================================
-   SHOW / HIDE PASSWORD
-   ========================================================= */
-
-const togglePassword =
-    document.getElementById("togglePassword");
-
-const passwordInput =
-    document.getElementById("password");
-
-if (togglePassword && passwordInput) {
-
-    togglePassword.addEventListener(
-        "click",
-        function () {
-
-            if (passwordInput.type === "password") {
-
-                passwordInput.type = "text";
-
-                togglePassword.textContent =
-                    "Hide";
-
-            } else {
-
-                passwordInput.type = "password";
-
-                togglePassword.textContent =
-                    "Show";
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   FORGOT PASSWORD
-   ========================================================= */
-
-const forgotPassword =
-    document.getElementById("forgotPassword");
-
-if (forgotPassword) {
-
-    forgotPassword.addEventListener(
-        "click",
-        function (event) {
-
-            event.preventDefault();
-
-            alert(
-                "Password recovery\n\n" +
-                "Password recovery will be available " +
-                "in the next UniCore portal update."
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   MOBILE SIDEBAR
-   ========================================================= */
+/* =========================================
+   4. SIDEBAR MOBILE MENU
+   ========================================= */
 
 const menuToggle =
     document.getElementById("menuToggle");
@@ -217,19 +164,6 @@ const sidebar =
 
 const sidebarOverlay =
     document.getElementById("sidebarOverlay");
-
-
-function closeSidebar() {
-
-    if (sidebar) {
-        sidebar.classList.remove("open");
-    }
-
-    if (sidebarOverlay) {
-        sidebarOverlay.classList.remove("show");
-    }
-
-}
 
 
 function openSidebar() {
@@ -245,1239 +179,674 @@ function openSidebar() {
 }
 
 
-if (menuToggle && sidebar) {
+function closeSidebar() {
 
-    menuToggle.addEventListener(
-        "click",
-        function () {
+    if (sidebar) {
+        sidebar.classList.remove("open");
+    }
 
-            if (sidebar.classList.contains("open")) {
+    if (sidebarOverlay) {
+        sidebarOverlay.classList.remove("show");
+    }
 
-                closeSidebar();
+}
 
-            } else {
 
-                openSidebar();
+if (menuToggle) {
 
-            }
-
-        }
-    );
+    menuToggle.addEventListener("click", function () {
+        openSidebar();
+    });
 
 }
 
 
 if (sidebarOverlay) {
 
-    sidebarOverlay.addEventListener(
-        "click",
-        closeSidebar
-    );
+    sidebarOverlay.addEventListener("click", function () {
+        closeSidebar();
+    });
 
 }
 
 
-/* Close mobile sidebar after clicking navigation */
+/* Close sidebar after clicking navigation link */
 
 const sidebarLinks =
-    document.querySelectorAll(
-        ".sidebar-nav a"
-    );
+    document.querySelectorAll(".sidebar a");
 
 sidebarLinks.forEach(function (link) {
 
-    link.addEventListener(
-        "click",
-        function () {
-
-            closeSidebar();
-
-        }
-    );
+    link.addEventListener("click", function () {
+        closeSidebar();
+    });
 
 });
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-   ========================================================= */
+/* =========================================
+   5. LOGOUT
+   ========================================= */
 
-sidebarLinks.forEach(function (link) {
+const logoutButton =
+    document.getElementById("logoutButton");
+
+if (logoutButton) {
+
+    logoutButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        localStorage.removeItem("unicoreLoggedIn");
+        localStorage.removeItem("unicoreStudentEmail");
+        localStorage.removeItem("unicoreRememberMe");
+
+        window.location.href = "index.html";
+
+    });
+
+}
+
+
+/* =========================================
+   6. AUTOMATIC ACTIVE NAVIGATION
+   ========================================= */
+
+const navLinks =
+    document.querySelectorAll(".sidebar a");
+
+navLinks.forEach(function (link) {
 
     const linkPage =
         link.getAttribute("href");
 
-    if (
-        linkPage &&
-        linkPage === currentPage
-    ) {
-
-        sidebarLinks.forEach(function (item) {
-
-            item.classList.remove("active");
-
-        });
-
+    if (linkPage === currentPage) {
         link.classList.add("active");
-
     }
 
 });
 
 
-/* =========================================================
-   LOGOUT
-   ========================================================= */
-
-const logoutBtn =
-    document.getElementById("logoutBtn");
-
-if (logoutBtn) {
-
-    logoutBtn.addEventListener(
-        "click",
-        function () {
-
-            const confirmLogout =
-                confirm(
-                    "Are you sure you want to log out?"
-                );
-
-            if (!confirmLogout) {
-                return;
-            }
-
-            localStorage.removeItem(
-                "unicoreLoggedIn"
-            );
-
-            localStorage.removeItem(
-                "unicoreStudentEmail"
-            );
-
-            localStorage.removeItem(
-                "unicoreRememberMe"
-            );
-
-            window.location.href =
-                "index.html";
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   COURSES PAGE
-   ========================================================= */
+/* =========================================
+   7. COURSE SEARCH
+   ========================================= */
 
 const courseSearch =
     document.getElementById("courseSearch");
 
-const coursesGrid =
-    document.getElementById("coursesGrid");
+const courseCards =
+    document.querySelectorAll(".course-card");
 
-const noCourses =
-    document.getElementById("noCourses");
+if (courseSearch) {
 
+    courseSearch.addEventListener("input", function () {
 
-if (courseSearch && coursesGrid) {
+        const searchValue =
+            courseSearch.value.toLowerCase().trim();
 
-    courseSearch.addEventListener(
-        "input",
-        function () {
+        courseCards.forEach(function (card) {
 
-            const searchValue =
-                this.value
-                    .toLowerCase()
-                    .trim();
+            const cardText =
+                card.textContent.toLowerCase();
 
-            const courseCards =
-                coursesGrid.querySelectorAll(
-                    ".course-card"
-                );
-
-            let visibleCourses = 0;
-
-            courseCards.forEach(
-                function (card) {
-
-                    const courseText =
-                        card.textContent
-                            .toLowerCase();
-
-                    if (
-                        courseText.includes(
-                            searchValue
-                        )
-                    ) {
-
-                        card.style.display =
-                            "";
-
-                        visibleCourses++;
-
-                    } else {
-
-                        card.style.display =
-                            "none";
-
-                    }
-
-                }
-            );
-
-            if (noCourses) {
-
-                noCourses.style.display =
-                    visibleCourses === 0
-                        ? "block"
-                        : "none";
-
+            if (cardText.includes(searchValue)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
             }
 
-        }
-    );
+        });
+
+    });
 
 }
 
 
-/* =========================================================
-   COURSE BUTTONS
-   ========================================================= */
+/* =========================================
+   8. COURSE BUTTONS
+   ========================================= */
 
 const courseButtons =
-    document.querySelectorAll(
-        ".course-button"
-    );
+    document.querySelectorAll(".course-btn");
 
 courseButtons.forEach(function (button) {
 
-    button.addEventListener(
-        "click",
-        function () {
+    button.addEventListener("click", function () {
 
-            const courseCard =
-                this.closest(".course-card");
+        const courseCard =
+            button.closest(".course-card");
 
-            if (!courseCard) {
-                return;
-            }
-
-            const courseNameElement =
-                courseCard.querySelector("h4");
-
-            const courseName =
-                courseNameElement
-                    ? courseNameElement.textContent.trim()
-                    : "Course";
-
-            const courseCodeElement =
-                courseCard.querySelector(
-                    ".course-code"
-                );
-
-            const courseCode =
-                courseCodeElement
-                    ? courseCodeElement.textContent.trim()
-                    : "";
-
-            alert(
-                "Course Details\n\n" +
-                courseName +
-                "\n" +
-                courseCode +
-                "\n\n" +
-                "Course details and resources " +
-                "will be available in the next portal update."
-            );
-
+        if (!courseCard) {
+            return;
         }
-    );
+
+        const courseNameElement =
+            courseCard.querySelector("h3");
+
+        const courseName =
+            courseNameElement
+                ? courseNameElement.textContent
+                : "this course";
+
+        alert(
+            "Course Details\n\n" +
+            courseName +
+            "\n\nCourse information is available in the UniCore portal."
+        );
+
+    });
 
 });
 
 
-/* =========================================================
-   ASSIGNMENTS PAGE
-   ========================================================= */
+/* =========================================
+   9. ASSIGNMENT FILTER
+   ========================================= */
 
 const assignmentFilter =
-    document.getElementById(
-        "assignmentFilter"
-    );
+    document.getElementById("assignmentFilter");
 
-const assignmentsGrid =
-    document.getElementById(
-        "assignmentsGrid"
-    );
+const assignmentCards =
+    document.querySelectorAll(".assignment-card");
 
-const noAssignments =
-    document.getElementById(
-        "noAssignments"
-    );
+if (assignmentFilter) {
 
+    assignmentFilter.addEventListener("change", function () {
 
-if (assignmentFilter && assignmentsGrid) {
+        const selected =
+            assignmentFilter.value.toLowerCase();
 
-    assignmentFilter.addEventListener(
-        "change",
-        function () {
+        assignmentCards.forEach(function (card) {
 
-            const selectedStatus =
-                this.value;
+            const statusElement =
+                card.querySelector(".assignment-status");
 
-            const assignmentCards =
-                assignmentsGrid.querySelectorAll(
-                    ".assignment-card"
-                );
-
-            let visibleAssignments = 0;
-
-            assignmentCards.forEach(
-                function (card) {
-
-                    const cardStatus =
-                        card.dataset.status;
-
-                    if (
-                        selectedStatus === "all" ||
-                        cardStatus === selectedStatus
-                    ) {
-
-                        card.style.display =
-                            "";
-
-                        visibleAssignments++;
-
-                    } else {
-
-                        card.style.display =
-                            "none";
-
-                    }
-
-                }
-            );
-
-            if (noAssignments) {
-
-                noAssignments.style.display =
-                    visibleAssignments === 0
-                        ? "block"
-                        : "none";
-
+            if (!statusElement) {
+                return;
             }
 
-        }
-    );
+            const status =
+                statusElement.textContent.toLowerCase();
+
+            if (
+                selected === "all" ||
+                selected === "" ||
+                status.includes(selected)
+            ) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
 
 }
 
 
-/* =========================================================
-   ASSIGNMENT ACTION BUTTONS
-   ========================================================= */
+/* =========================================
+   10. ASSIGNMENT BUTTONS
+   ========================================= */
 
 const assignmentButtons =
-    document.querySelectorAll(
-        ".assignment-action"
-    );
+    document.querySelectorAll(".assignment-btn");
 
 assignmentButtons.forEach(function (button) {
 
-    button.addEventListener(
-        "click",
-        function () {
+    button.addEventListener("click", function () {
 
-            const assignmentCard =
-                this.closest(
-                    ".assignment-card"
-                );
+        const assignmentCard =
+            button.closest(".assignment-card");
 
-            if (!assignmentCard) {
-                return;
-            }
-
-            const assignmentNameElement =
-                assignmentCard.querySelector(
-                    "h4"
-                );
-
-            const assignmentName =
-                assignmentNameElement
-                    ? assignmentNameElement.textContent.trim()
-                    : "Assignment";
-
-            const courseElement =
-                assignmentCard.querySelector(
-                    ".assignment-course"
-                );
-
-            const courseName =
-                courseElement
-                    ? courseElement.textContent.trim()
-                    : "Course";
-
-            const statusElement =
-                assignmentCard.querySelector(
-                    ".assignment-status"
-                );
-
-            const status =
-                statusElement
-                    ? statusElement.textContent.trim()
-                    : "Pending";
-
-            alert(
-                "Assignment Details\n\n" +
-                assignmentName +
-                "\n" +
-                courseName +
-                "\n\n" +
-                "Status: " +
-                status +
-                "\n\n" +
-                "Detailed assignment information " +
-                "will be available in the next portal update."
-            );
-
+        if (!assignmentCard) {
+            return;
         }
-    );
+
+        const titleElement =
+            assignmentCard.querySelector("h3");
+
+        const title =
+            titleElement
+                ? titleElement.textContent
+                : "Assignment";
+
+        alert(
+            title +
+            "\n\nAssignment details are available in the portal."
+        );
+
+    });
 
 });
 
 
-/* =========================================================
-   TIMETABLE PRINT
-   ========================================================= */
+/* =========================================
+   11. TIMETABLE PRINT
+   ========================================= */
 
 const printTimetable =
-    document.getElementById(
-        "printTimetable"
-    );
+    document.getElementById("printTimetable");
 
 if (printTimetable) {
 
-    printTimetable.addEventListener(
-        "click",
-        function () {
-
-            window.print();
-
-        }
-    );
+    printTimetable.addEventListener("click", function () {
+        window.print();
+    });
 
 }
 
 
-/* =========================================================
-   RESULTS PRINT
-   ========================================================= */
+/* =========================================
+   12. RESULTS PRINT
+   ========================================= */
 
 const printResults =
-    document.getElementById(
-        "printResults"
-    );
+    document.getElementById("printResults");
 
 if (printResults) {
 
-    printResults.addEventListener(
-        "click",
-        function () {
-
-            window.print();
-
-        }
-    );
+    printResults.addEventListener("click", function () {
+        window.print();
+    });
 
 }
 
 
-/* =========================================================
-   ANNOUNCEMENTS PAGE
-   ========================================================= */
+/* =========================================
+   13. ANNOUNCEMENT FILTER
+   ========================================= */
 
-const announcementFilterButtons =
-    document.querySelectorAll(
-        ".announcement-filter-btn"
-    );
+const announcementFilter =
+    document.getElementById("announcementFilter");
 
 const announcementCards =
-    document.querySelectorAll(
-        ".announcement-card"
-    );
+    document.querySelectorAll(".announcement-card");
 
-const noAnnouncements =
-    document.getElementById(
-        "noAnnouncements"
-    );
+if (announcementFilter) {
 
+    announcementFilter.addEventListener("change", function () {
 
-announcementFilterButtons.forEach(
-    function (button) {
+        const selected =
+            announcementFilter.value.toLowerCase();
 
-        button.addEventListener(
-            "click",
-            function () {
+        announcementCards.forEach(function (card) {
 
-                const selectedFilter =
-                    button.getAttribute(
-                        "data-filter"
-                    );
+            const categoryElement =
+                card.querySelector(".announcement-category");
 
-                announcementFilterButtons
-                    .forEach(function (btn) {
-
-                        btn.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-                button.classList.add(
-                    "active"
-                );
-
-                let visibleCount = 0;
-
-                announcementCards.forEach(
-                    function (card) {
-
-                        const category =
-                            card.getAttribute(
-                                "data-category"
-                            );
-
-                        if (
-                            selectedFilter === "all" ||
-                            category === selectedFilter
-                        ) {
-
-                            card.style.display =
-                                "flex";
-
-                            visibleCount++;
-
-                        } else {
-
-                            card.style.display =
-                                "none";
-
-                        }
-
-                    }
-                );
-
-                if (noAnnouncements) {
-
-                    noAnnouncements.style.display =
-                        visibleCount === 0
-                            ? "block"
-                            : "none";
-
-                }
-
+            if (!categoryElement) {
+                return;
             }
-        );
 
-    }
-);
+            const category =
+                categoryElement.textContent.toLowerCase();
 
-
-/* =========================================================
-   ANNOUNCEMENT READ MORE
-   ========================================================= */
-
-const announcementReadButtons =
-    document.querySelectorAll(
-        ".announcement-read"
-    );
-
-announcementReadButtons.forEach(
-    function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                const announcementCard =
-                    this.closest(
-                        ".announcement-card"
-                    );
-
-                if (!announcementCard) {
-                    return;
-                }
-
-                const titleElement =
-                    announcementCard.querySelector(
-                        "h3"
-                    );
-
-                const descriptionElement =
-                    announcementCard.querySelector(
-                        ".announcement-card-content > p"
-                    );
-
-                const title =
-                    titleElement
-                        ? titleElement.textContent.trim()
-                        : "Announcement";
-
-                const description =
-                    descriptionElement
-                        ? descriptionElement.textContent.trim()
-                        : "No additional information available.";
-
-                alert(
-                    title +
-                    "\n\n" +
-                    description
-                );
-
+            if (
+                selected === "all" ||
+                selected === "" ||
+                category.includes(selected)
+            ) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
             }
-        );
 
-    }
-);
+        });
+
+    });
+
+}
 
 
-/* =========================================================
-   PROFILE PAGE
-   ========================================================= */
+/* =========================================
+   14. ANNOUNCEMENT READ MORE
+   ========================================= */
 
-const profileStatus =
-    document.querySelector(
-        ".profile-status"
-    );
+const readMoreButtons =
+    document.querySelectorAll(".read-more");
 
-if (profileStatus) {
+readMoreButtons.forEach(function (button) {
 
-    profileStatus.addEventListener(
-        "click",
-        function () {
+    button.addEventListener("click", function () {
 
-            alert(
-                "Account Status\n\n" +
-                "Your UniCore student account " +
-                "is currently active."
-            );
+        const announcementCard =
+            button.closest(".announcement-card");
 
+        if (!announcementCard) {
+            return;
         }
-    );
 
-}
+        const extraContent =
+            announcementCard.querySelector(".announcement-extra");
 
+        if (extraContent) {
 
-/* =========================================================
-   STUDY REMINDERS
-   ========================================================= */
+            if (
+                extraContent.style.display === "block"
+            ) {
 
-const addReminderButton =
-    document.getElementById(
-        "addReminderButton"
-    );
-
-const reminderForm =
-    document.getElementById(
-        "reminderForm"
-    );
-
-const reminderInput =
-    document.getElementById(
-        "reminderInput"
-    );
-
-const saveReminderButton =
-    document.getElementById(
-        "saveReminderButton"
-    );
-
-const cancelReminderButton =
-    document.getElementById(
-        "cancelReminderButton"
-    );
-
-const remindersList =
-    document.getElementById(
-        "remindersList"
-    );
-
-
-/* =========================================================
-   REMINDER STORAGE
-   ========================================================= */
-
-const reminderStorageKey =
-    "unicoreStudyReminders";
-
-
-function getStoredReminders() {
-
-    try {
-
-        const stored =
-            localStorage.getItem(
-                reminderStorageKey
-            );
-
-        return stored
-            ? JSON.parse(stored)
-            : [];
-
-    } catch (error) {
-
-        return [];
-
-    }
-
-}
-
-
-function saveStoredReminders(
-    reminders
-) {
-
-    localStorage.setItem(
-        reminderStorageKey,
-        JSON.stringify(reminders)
-    );
-
-}
-
-
-/* =========================================================
-   CREATE REMINDER ELEMENT
-   ========================================================= */
-
-function createReminderElement(
-    reminder
-) {
-
-    const reminderItem =
-        document.createElement("div");
-
-    reminderItem.className =
-        "reminder-item";
-
-    if (reminder.completed) {
-
-        reminderItem.classList.add(
-            "completed"
-        );
-
-    }
-
-    const label =
-        document.createElement("label");
-
-    const checkbox =
-        document.createElement("input");
-
-    checkbox.type =
-        "checkbox";
-
-    checkbox.checked =
-        Boolean(reminder.completed);
-
-    const text =
-        document.createElement("span");
-
-    text.textContent =
-        reminder.text;
-
-    const time =
-        document.createElement("span");
-
-    time.className =
-        "reminder-time";
-
-    time.textContent =
-        reminder.time || "Today";
-
-    label.appendChild(
-        checkbox
-    );
-
-    label.appendChild(
-        text
-    );
-
-    reminderItem.appendChild(
-        label
-    );
-
-    reminderItem.appendChild(
-        time
-    );
-
-    checkbox.addEventListener(
-        "change",
-        function () {
-
-            reminder.completed =
-                checkbox.checked;
-
-            if (checkbox.checked) {
-
-                reminderItem.classList.add(
-                    "completed"
-                );
+                extraContent.style.display = "none";
+                button.textContent = "Read More";
 
             } else {
 
-                reminderItem.classList.remove(
-                    "completed"
-                );
+                extraContent.style.display = "block";
+                button.textContent = "Read Less";
 
             }
 
-            saveReminderState();
+        } else {
 
-        }
-    );
-
-    return reminderItem;
-
-}
-
-
-/* =========================================================
-   SAVE CURRENT REMINDER STATE
-   ========================================================= */
-
-function saveReminderState() {
-
-    if (!remindersList) {
-        return;
-    }
-
-    const reminders = [];
-
-    const reminderItems =
-        remindersList.querySelectorAll(
-            ".reminder-item"
-        );
-
-    reminderItems.forEach(
-        function (item) {
-
-            const textElement =
-                item.querySelector(
-                    "label span"
-                );
-
-            const checkbox =
-                item.querySelector(
-                    'input[type="checkbox"]'
-                );
-
-            const timeElement =
-                item.querySelector(
-                    ".reminder-time"
-                );
-
-            if (!textElement) {
-                return;
-            }
-
-            reminders.push({
-
-                text:
-                    textElement.textContent.trim(),
-
-                completed:
-                    checkbox
-                        ? checkbox.checked
-                        : false,
-
-                time:
-                    timeElement
-                        ? timeElement.textContent.trim()
-                        : "Today"
-
-            });
-
-        }
-    );
-
-    saveStoredReminders(
-        reminders
-    );
-
-}
-
-
-/* =========================================================
-   LOAD REMINDERS
-   ========================================================= */
-
-function loadReminders() {
-
-    if (!remindersList) {
-        return;
-    }
-
-    const storedReminders =
-        getStoredReminders();
-
-    if (storedReminders.length === 0) {
-        return;
-    }
-
-    /*
-     * Remove the default HTML reminders
-     * when saved reminders exist.
-     */
-
-    remindersList.innerHTML = "";
-
-    storedReminders.forEach(
-        function (reminder) {
-
-            remindersList.appendChild(
-                createReminderElement(
-                    reminder
-                )
+            alert(
+                "Full announcement details are available in the UniCore portal."
             );
 
         }
-    );
+
+    });
+
+});
+
+
+/* =========================================
+   15. PROFILE STATUS
+   ========================================= */
+
+const profileStatus =
+    document.querySelector(".profile-status");
+
+if (profileStatus) {
+
+    profileStatus.addEventListener("click", function () {
+
+        alert(
+            "Account Status\n\n" +
+            "Your UniCore student account is currently active."
+        );
+
+    });
 
 }
 
 
-loadReminders();
+/* =========================================
+   16. STUDY REMINDERS
+   ========================================= */
 
+const addReminderButton =
+    document.getElementById("addReminderButton");
 
-/* =========================================================
-   OPEN REMINDER FORM
-   ========================================================= */
+const reminderForm =
+    document.getElementById("reminderForm");
+
+const reminderInput =
+    document.getElementById("reminderInput");
+
+const saveReminderButton =
+    document.getElementById("saveReminderButton");
+
+const cancelReminderButton =
+    document.getElementById("cancelReminderButton");
+
+const remindersList =
+    document.getElementById("remindersList");
+
 
 if (addReminderButton) {
 
-    addReminderButton.addEventListener(
-        "click",
-        function () {
+    addReminderButton.addEventListener("click", function () {
 
-            if (!reminderForm) {
-                return;
-            }
-
-            reminderForm.classList.add(
-                "show"
-            );
-
-            if (reminderInput) {
-                reminderInput.focus();
-            }
-
+        if (reminderForm) {
+            reminderForm.classList.add("show");
         }
-    );
+
+        if (reminderInput) {
+            reminderInput.focus();
+        }
+
+    });
 
 }
 
-
-/* =========================================================
-   CANCEL REMINDER
-   ========================================================= */
 
 if (cancelReminderButton) {
 
-    cancelReminderButton.addEventListener(
-        "click",
-        function () {
+    cancelReminderButton.addEventListener("click", function () {
 
-            if (reminderInput) {
-                reminderInput.value = "";
-            }
-
-            if (reminderForm) {
-                reminderForm.classList.remove(
-                    "show"
-                );
-            }
-
+        if (reminderInput) {
+            reminderInput.value = "";
         }
-    );
+
+        if (reminderForm) {
+            reminderForm.classList.remove("show");
+        }
+
+    });
 
 }
 
-
-/* =========================================================
-   SAVE NEW REMINDER
-   ========================================================= */
 
 if (saveReminderButton) {
 
-    saveReminderButton.addEventListener(
-        "click",
-        function () {
+    saveReminderButton.addEventListener("click", function () {
 
-            if (!reminderInput || !remindersList) {
-                return;
-            }
-
-            const reminderText =
-                reminderInput.value.trim();
-
-            if (reminderText === "") {
-
-                alert(
-                    "Please enter a study reminder."
-                );
-
-                reminderInput.focus();
-
-                return;
-
-            }
-
-            const newReminder = {
-
-                text:
-                    reminderText,
-
-                completed:
-                    false,
-
-                time:
-                    "Today"
-
-            };
-
-            remindersList.appendChild(
-                createReminderElement(
-                    newReminder
-                )
-            );
-
-            saveReminderState();
-
-            reminderInput.value = "";
-
-            if (reminderForm) {
-
-                reminderForm.classList.remove(
-                    "show"
-                );
-
-            }
-
+        if (!reminderInput || !remindersList) {
+            return;
         }
-    );
+
+        const reminderText =
+            reminderInput.value.trim();
+
+        if (reminderText === "") {
+
+            alert("Please enter a study reminder.");
+            reminderInput.focus();
+
+            return;
+        }
+
+
+        const reminderItem =
+            document.createElement("div");
+
+        reminderItem.className =
+            "reminder-item";
+
+        reminderItem.innerHTML = `
+            <label>
+                <input type="checkbox">
+                <span>${reminderText}</span>
+            </label>
+
+            <span class="reminder-time">
+                Today
+            </span>
+        `;
+
+
+        remindersList.appendChild(reminderItem);
+
+        reminderInput.value = "";
+
+        if (reminderForm) {
+            reminderForm.classList.remove("show");
+        }
+
+
+        addReminderCheckbox(
+            reminderItem.querySelector(
+                'input[type="checkbox"]'
+            )
+        );
+
+    });
 
 }
 
 
-/* =========================================================
-   ENTER KEY FOR REMINDER
-   ========================================================= */
+function addReminderCheckbox(checkbox) {
 
-if (reminderInput) {
+    if (!checkbox) {
+        return;
+    }
 
-    reminderInput.addEventListener(
-        "keydown",
-        function (event) {
+    checkbox.addEventListener("change", function () {
 
-            if (event.key === "Enter") {
+        const reminderItem =
+            checkbox.closest(".reminder-item");
 
-                event.preventDefault();
-
-                if (saveReminderButton) {
-                    saveReminderButton.click();
-                }
-
-            }
-
+        if (!reminderItem) {
+            return;
         }
-    );
+
+        if (checkbox.checked) {
+            reminderItem.classList.add("completed");
+        } else {
+            reminderItem.classList.remove("completed");
+        }
+
+    });
 
 }
 
 
-/* =========================================================
-   HELP & SUPPORT
-   ========================================================= */
+document
+    .querySelectorAll(
+        '.reminder-item input[type="checkbox"]'
+    )
+    .forEach(function (checkbox) {
 
-/* FAQ accordion */
+        addReminderCheckbox(checkbox);
+
+    });
+
+
+/* =========================================
+   17. FAQ ACCORDION
+   ========================================= */
 
 const faqQuestions =
-    document.querySelectorAll(
-        ".faq-question"
-    );
+    document.querySelectorAll(".faq-question");
 
-faqQuestions.forEach(
-    function (question) {
+faqQuestions.forEach(function (question) {
 
-        question.addEventListener(
-            "click",
-            function () {
+    question.addEventListener("click", function () {
 
-                const faqItem =
-                    question.closest(
-                        ".faq-item"
-                    );
+        const faqItem =
+            question.closest(".faq-item");
 
-                if (!faqItem) {
-                    return;
-                }
+        if (faqItem) {
+            faqItem.classList.toggle("open");
+        }
 
-                const wasOpen =
-                    faqItem.classList.contains(
-                        "open"
-                    );
+    });
 
-                /*
-                 * Close other FAQ items
-                 * for a cleaner accordion.
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".faq-item.open"
-                    )
-                    .forEach(
-                        function (item) {
-
-                            item.classList.remove(
-                                "open"
-                            );
-
-                        }
-                    );
-
-                if (!wasOpen) {
-
-                    faqItem.classList.add(
-                        "open"
-                    );
-
-                }
-
-            }
-        );
-
-    }
-);
+});
 
 
-/* =========================================================
-   HELP QUICK ACTION BUTTONS
-   ========================================================= */
+/* =========================================
+   18. HELP QUICK ACTIONS
+   ========================================= */
 
 const helpActionButtons =
-    document.querySelectorAll(
-        ".help-action"
-    );
+    document.querySelectorAll(".help-action");
 
-helpActionButtons.forEach(
-    function (button) {
+helpActionButtons.forEach(function (button) {
 
-        button.addEventListener(
-            "click",
-            function () {
+    button.addEventListener("click", function () {
 
-                const targetId =
-                    button.getAttribute(
-                        "data-target"
-                    );
+        const targetId =
+            button.getAttribute("data-target");
 
-                const targetSection =
-                    document.getElementById(
-                        targetId
-                    );
+        const targetSection =
+            document.getElementById(targetId);
 
-                if (targetSection) {
+        if (targetSection) {
 
-                    targetSection.scrollIntoView({
+            targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-                        behavior:
-                            "smooth",
+        }
 
-                        block:
-                            "start"
+    });
 
-                    });
-
-                }
-
-            }
-        );
-
-    }
-);
+});
 
 
-/* =========================================================
-   SUPPORT FORM
-   ========================================================= */
+/* =========================================
+   19. SUPPORT FORM
+   ========================================= */
 
 const supportForm =
-    document.getElementById(
-        "supportForm"
-    );
+    document.getElementById("supportForm");
 
 if (supportForm) {
 
-    supportForm.addEventListener(
-        "submit",
-        function (event) {
+    supportForm.addEventListener("submit", function (event) {
 
-            event.preventDefault();
+        event.preventDefault();
 
-            const nameInput =
-                document.getElementById(
-                    "supportName"
-                );
+        const nameInput =
+            document.getElementById("supportName");
 
-            const messageInput =
-                document.getElementById(
-                    "supportMessage"
-                );
+        const messageInput =
+            document.getElementById("supportMessage");
 
-            const name =
-                nameInput
-                    ? nameInput.value.trim()
-                    : "";
+        const name =
+            nameInput
+                ? nameInput.value.trim()
+                : "";
 
-            const message =
-                messageInput
-                    ? messageInput.value.trim()
-                    : "";
+        const message =
+            messageInput
+                ? messageInput.value.trim()
+                : "";
 
-            if (
-                name === "" ||
-                message === ""
-            ) {
 
-                alert(
-                    "Please complete all required fields."
-                );
-
-                return;
-
-            }
+        if (name === "" || message === "") {
 
             alert(
-                "Support Request Submitted\n\n" +
-                "Thank you, " +
-                name +
-                "!\n\n" +
-                "Your support request has been " +
-                "submitted successfully."
+                "Please complete all required fields."
             );
 
-            supportForm.reset();
-
+            return;
         }
-    );
+
+
+        alert(
+            "Thank you, " +
+            name +
+            "!\n\n" +
+            "Your support request has been submitted successfully."
+        );
+
+
+        supportForm.reset();
+
+    });
 
 }
 
 
-/* =========================================================
-   END OF UNICORE JAVASCRIPT
-   ========================================================= */
+/* =========================================
+   20. PREVENT OLD LOGIN SESSION
+   ========================================= */
+
+window.addEventListener("pageshow", function () {
+
+    const loggedIn =
+        localStorage.getItem("unicoreLoggedIn");
+
+    if (
+        protectedPages.includes(currentPage) &&
+        loggedIn !== "true"
+    ) {
+
+        window.location.href = "index.html";
+
+    }
+
+});
