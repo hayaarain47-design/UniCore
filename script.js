@@ -419,3 +419,40 @@ if (profileStatus) {
     });
 
 }
+/* =========================================
+   LOGIN PROTECTION
+========================================= */
+
+const protectedPages = [
+    "dashboard.html",
+    "courses.html",
+    "assignments.html",
+    "timetable.html",
+    "results.html",
+    "announcements.html",
+    "profile.html"
+];
+
+const currentPage =
+    window.location.pathname.split("/").pop();
+
+const isLoggedIn =
+    localStorage.getItem("unicoreLoggedIn") === "true";
+
+
+if (
+    protectedPages.includes(currentPage) &&
+    !isLoggedIn
+) {
+    window.location.href = "index.html";
+}
+/* =========================================
+   LOGIN PAGE REDIRECT
+========================================= */
+
+if (
+    (currentPage === "" || currentPage === "index.html") &&
+    isLoggedIn
+) {
+    window.location.href = "dashboard.html";
+}
