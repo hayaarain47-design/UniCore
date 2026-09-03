@@ -307,3 +307,97 @@ if (printResults) {
         window.print();
     });
 }
+/* =========================================
+   ANNOUNCEMENTS PAGE
+========================================= */
+
+const announcementFilterButtons =
+    document.querySelectorAll(".announcement-filter-btn");
+
+const announcementCards =
+    document.querySelectorAll(".announcement-card");
+
+const noAnnouncements =
+    document.getElementById("noAnnouncements");
+
+
+if (announcementFilterButtons.length > 0) {
+
+    announcementFilterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const selectedFilter = button.getAttribute("data-filter");
+
+            announcementFilterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            let visibleCount = 0;
+
+            announcementCards.forEach(function (card) {
+
+                const category = card.getAttribute("data-category");
+
+                if (
+                    selectedFilter === "all" ||
+                    category === selectedFilter
+                ) {
+                    card.style.display = "flex";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+
+            if (noAnnouncements) {
+
+                if (visibleCount === 0) {
+                    noAnnouncements.style.display = "block";
+                } else {
+                    noAnnouncements.style.display = "none";
+                }
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* READ MORE BUTTON */
+
+const announcementReadButtons =
+    document.querySelectorAll(".announcement-read");
+
+
+announcementReadButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const announcementCard =
+            button.closest(".announcement-card");
+
+        const title =
+            announcementCard.querySelector("h3").textContent.trim();
+
+        const description =
+            announcementCard.querySelector(
+                ".announcement-card-content > p"
+            ).textContent.trim();
+
+        alert(
+            title +
+            "\n\n" +
+            description
+        );
+
+    });
+
+});
