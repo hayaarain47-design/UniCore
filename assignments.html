@@ -10,421 +10,625 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="dashboard-layout">
+<div class="portal">
 
-        <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
 
-        <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar">
 
-            <div class="sidebar-brand">
-                <h1>UniCore</h1>
-                <span>Student Portal</span>
-            </div>
+        <div class="sidebar-brand">
+            <h1>UniCore</h1>
+            <span>Student Portal</span>
+        </div>
 
-            <nav class="sidebar-nav">
+        <nav class="sidebar-nav">
 
-                <a href="dashboard.html" class="nav-link">
-                    <span class="nav-icon">⌂</span>
-                    <span>Dashboard</span>
-                </a>
+            <a href="dashboard.html">
+                <span>Dashboard</span>
+            </a>
 
-                <a href="courses.html" class="nav-link">
-                    <span class="nav-icon">▣</span>
-                    <span>Courses</span>
-                </a>
+            <a href="courses.html">
+                <span>Courses</span>
+            </a>
 
-                <a href="assignments.html" class="nav-link active">
-                    <span class="nav-icon">✓</span>
-                    <span>Assignments</span>
-                </a>
+            <a href="assignments.html" class="active">
+                <span>Assignments</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◷</span>
-                    <span>Timetable</span>
-                </a>
+            <a href="timetable.html">
+                <span>Timetable</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">▤</span>
-                    <span>Results</span>
-                </a>
+            <a href="results.html">
+                <span>Results</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">●</span>
-                    <span>Announcements</span>
-                </a>
+            <a href="announcements.html">
+                <span>Announcements</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◌</span>
-                    <span>Profile</span>
-                </a>
+            <a href="profile.html">
+                <span>Profile</span>
+            </a>
 
-            </nav>
+            <a href="help.html">
+                <span>Help & Support</span>
+            </a>
 
-            <div class="sidebar-bottom">
+        </nav>
 
-                <a href="#" class="help-link">
-                    Need Help?
-                </a>
+        <div class="sidebar-bottom">
 
-                <button class="logout-button" id="logoutBtn">
-                    Logout
+            <button class="logout-button" id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN AREA -->
+
+    <main class="main-area">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
                 </button>
 
+                <div>
+
+                    <span class="header-label">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h2>Assignments</h2>
+
+                </div>
+
             </div>
 
-        </aside>
 
+            <div class="mini-profile">
 
-        <!-- MOBILE OVERLAY -->
-
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-
-        <!-- MAIN CONTENT -->
-
-        <main class="dashboard-content">
-
-            <!-- HEADER -->
-
-            <header class="dashboard-header">
-
-                <div class="header-left">
-
-                    <button class="menu-toggle" id="menuToggle">
-                        ☰
-                    </button>
-
-                    <div>
-                        <span class="header-label">STUDENT PORTAL</span>
-                        <h2>Assignments</h2>
-                    </div>
-
+                <div class="mini-avatar">
+                    TW
                 </div>
-
-                <div class="header-profile">
-
-                    <div class="mini-profile">
-                        <strong>Tooba Waheed</strong>
-                        <span>Computer Science</span>
-                    </div>
-
-                    <div class="profile-avatar">
-                        TW
-                    </div>
-
-                </div>
-
-            </header>
-
-
-            <!-- PAGE INTRO -->
-
-            <section class="assignments-intro">
 
                 <div>
-                    <h2>My Assignments</h2>
-                    <p>Track your academic tasks, deadlines and submission status.</p>
+
+                    <strong>Tooba Waheed</strong>
+
+                    <span>
+                        Computer Science
+                    </span>
+
                 </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="dashboard-content">
+
+            <!-- INTRO -->
+
+            <div class="assignments-intro">
+
+                <div>
+
+                    <span class="section-label">
+                        ACADEMIC WORK
+                    </span>
+
+                    <h1>
+                        My Assignments
+                    </h1>
+
+                    <p>
+                        Track your upcoming deadlines, submitted work
+                        and completed assignments.
+                    </p>
+
+                </div>
+
 
                 <div class="assignment-semester">
-                    <span>Current Semester</span>
-                    <strong>Fall 2026</strong>
+
+                    <span>
+                        CURRENT SEMESTER
+                    </span>
+
+                    <strong>
+                        Fall 2026
+                    </strong>
+
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- ASSIGNMENT SUMMARY -->
+            <!-- SUMMARY -->
 
-            <section class="assignment-summary">
+            <div class="assignment-summary">
 
                 <div class="assignment-summary-box">
-                    <span>Total Assignments</span>
-                    <strong>04</strong>
+
+                    <span>
+                        Total Assignments
+                    </span>
+
+                    <strong>
+                        04
+                    </strong>
+
                 </div>
+
 
                 <div class="assignment-summary-box">
-                    <span>Pending</span>
-                    <strong>02</strong>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong>
+                        02
+                    </strong>
+
                 </div>
+
 
                 <div class="assignment-summary-box">
-                    <span>Submitted</span>
-                    <strong>01</strong>
+
+                    <span>
+                        Submitted
+                    </span>
+
+                    <strong>
+                        01
+                    </strong>
+
                 </div>
+
 
                 <div class="assignment-summary-box">
-                    <span>Completed</span>
-                    <strong>01</strong>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong>
+                        01
+                    </strong>
+
                 </div>
 
-            </section>
+            </div>
+
+
+            <!-- HEADING + FILTER -->
+
+            <div class="assignments-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ASSIGNMENT DIRECTORY
+                    </span>
+
+                    <h2>
+                        All Assignments
+                    </h2>
+
+                </div>
+
+
+                <select id="assignmentFilter">
+
+                    <option value="all">
+                        All Assignments
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="submitted">
+                        Submitted
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
 
 
             <!-- ASSIGNMENTS -->
 
-            <section class="assignments-section">
+            <div
+                class="assignments-grid"
+                id="assignmentsGrid"
+            >
 
-                <div class="assignments-heading">
+                <!-- ASSIGNMENT 1 -->
 
-                    <div>
-                        <h3>Assignment List</h3>
-                        <p>Keep track of your upcoming academic work.</p>
+                <article
+                    class="assignment-card"
+                    data-status="pending"
+                >
+
+                    <div class="assignment-card-top">
+
+                        <div class="assignment-icon">
+                            DB
+                        </div>
+
+                        <span class="assignment-status pending">
+                            Pending
+                        </span>
+
                     </div>
 
-                    <select id="assignmentFilter">
-                        <option value="all">All Assignments</option>
-                        <option value="pending">Pending</option>
-                        <option value="submitted">Submitted</option>
-                        <option value="completed">Completed</option>
-                    </select>
 
-                </div>
+                    <div class="assignment-card-content">
 
+                        <span class="assignment-course">
+                            CS-601 • Advanced Database Systems
+                        </span>
 
-                <div class="assignments-grid" id="assignmentsGrid">
+                        <h3>
+                            Database Project
+                        </h3>
 
+                        <p>
+                            Design and implement a database solution
+                            using advanced database concepts.
+                        </p>
 
-                    <!-- ASSIGNMENT 1 -->
-
-                    <article class="assignment-card" data-status="pending">
-
-                        <div class="assignment-card-top">
-
-                            <div class="assignment-icon">
-                                DB
-                            </div>
-
-                            <span class="assignment-status pending">
-                                Pending
-                            </span>
-
-                        </div>
-
-                        <div class="assignment-card-content">
-
-                            <span class="assignment-course">
-                                CS-601 · Advanced Database Systems
-                            </span>
-
-                            <h4>Database Project</h4>
-
-                            <p>
-                                Design and implement a database system with
-                                appropriate tables, relationships and queries.
-                            </p>
-
-                        </div>
 
                         <div class="assignment-meta">
 
                             <div>
-                                <span>Due Date</span>
-                                <strong>Sep 08, 2026</strong>
+
+                                <span>
+                                    Due Date
+                                </span>
+
+                                <strong>
+                                    Sep 08, 2026
+                                </strong>
+
                             </div>
 
+
                             <div>
-                                <span>Marks</span>
-                                <strong>20 Marks</strong>
+
+                                <span>
+                                    Marks
+                                </span>
+
+                                <strong>
+                                    20
+                                </strong>
+
                             </div>
 
                         </div>
 
-                        <button class="assignment-action">
+
+                        <button
+                            class="assignment-action"
+                            type="button"
+                        >
                             View Assignment
                         </button>
 
-                    </article>
+                    </div>
+
+                </article>
 
 
-                    <!-- ASSIGNMENT 2 -->
+                <!-- ASSIGNMENT 2 -->
 
-                    <article class="assignment-card" data-status="pending">
+                <article
+                    class="assignment-card"
+                    data-status="pending"
+                >
 
-                        <div class="assignment-card-top">
+                    <div class="assignment-card-top">
 
-                            <div class="assignment-icon">
-                                AI
-                            </div>
-
-                            <span class="assignment-status pending">
-                                Pending
-                            </span>
-
+                        <div class="assignment-icon">
+                            AI
                         </div>
 
-                        <div class="assignment-card-content">
+                        <span class="assignment-status pending">
+                            Pending
+                        </span>
 
-                            <span class="assignment-course">
-                                CS-603 · Artificial Intelligence
-                            </span>
+                    </div>
 
-                            <h4>AI Research Task</h4>
 
-                            <p>
-                                Prepare a short research report covering
-                                current applications of artificial intelligence.
-                            </p>
+                    <div class="assignment-card-content">
 
-                        </div>
+                        <span class="assignment-course">
+                            CS-603 • Artificial Intelligence
+                        </span>
+
+                        <h3>
+                            AI Research Task
+                        </h3>
+
+                        <p>
+                            Prepare a short research task on a selected
+                            artificial intelligence topic.
+                        </p>
+
 
                         <div class="assignment-meta">
 
                             <div>
-                                <span>Due Date</span>
-                                <strong>Sep 11, 2026</strong>
+
+                                <span>
+                                    Due Date
+                                </span>
+
+                                <strong>
+                                    Sep 11, 2026
+                                </strong>
+
                             </div>
 
+
                             <div>
-                                <span>Marks</span>
-                                <strong>15 Marks</strong>
+
+                                <span>
+                                    Marks
+                                </span>
+
+                                <strong>
+                                    15
+                                </strong>
+
                             </div>
 
                         </div>
 
-                        <button class="assignment-action">
+
+                        <button
+                            class="assignment-action"
+                            type="button"
+                        >
                             View Assignment
                         </button>
 
-                    </article>
+                    </div>
+
+                </article>
 
 
-                    <!-- ASSIGNMENT 3 -->
+                <!-- ASSIGNMENT 3 -->
 
-                    <article class="assignment-card" data-status="submitted">
+                <article
+                    class="assignment-card"
+                    data-status="submitted"
+                >
 
-                        <div class="assignment-card-top">
+                    <div class="assignment-card-top">
 
-                            <div class="assignment-icon">
-                                SE
-                            </div>
-
-                            <span class="assignment-status submitted">
-                                Submitted
-                            </span>
-
+                        <div class="assignment-icon">
+                            SE
                         </div>
 
-                        <div class="assignment-card-content">
+                        <span class="assignment-status submitted">
+                            Submitted
+                        </span>
 
-                            <span class="assignment-course">
-                                CS-605 · Software Engineering
-                            </span>
+                    </div>
 
-                            <h4>Software Design</h4>
 
-                            <p>
-                                Create a software design document including
-                                requirements, system structure and diagrams.
-                            </p>
+                    <div class="assignment-card-content">
 
-                        </div>
+                        <span class="assignment-course">
+                            CS-605 • Software Engineering
+                        </span>
+
+                        <h3>
+                            Software Design
+                        </h3>
+
+                        <p>
+                            Prepare a software design document covering
+                            requirements and system architecture.
+                        </p>
+
 
                         <div class="assignment-meta">
 
                             <div>
-                                <span>Submitted</span>
-                                <strong>Sep 02, 2026</strong>
+
+                                <span>
+                                    Submitted
+                                </span>
+
+                                <strong>
+                                    Sep 02, 2026
+                                </strong>
+
                             </div>
+
 
                             <div>
-                                <span>Marks</span>
-                                <strong>20 Marks</strong>
+
+                                <span>
+                                    Marks
+                                </span>
+
+                                <strong>
+                                    20
+                                </strong>
+
                             </div>
 
                         </div>
 
-                        <button class="assignment-action">
-                            View Submission
-                        </button>
 
-                    </article>
-
-
-                    <!-- ASSIGNMENT 4 -->
-
-                    <article class="assignment-card" data-status="completed">
-
-                        <div class="assignment-card-top">
-
-                            <div class="assignment-icon">
-                                CN
-                            </div>
-
-                            <span class="assignment-status completed">
-                                Completed
-                            </span>
-
-                        </div>
-
-                        <div class="assignment-card-content">
-
-                            <span class="assignment-course">
-                                CS-607 · Computer Networks
-                            </span>
-
-                            <h4>Network Architecture</h4>
-
-                            <p>
-                                Prepare an overview of network architecture,
-                                protocols and communication models.
-                            </p>
-
-                        </div>
-
-                        <div class="assignment-meta">
-
-                            <div>
-                                <span>Completed</span>
-                                <strong>Aug 30, 2026</strong>
-                            </div>
-
-                            <div>
-                                <span>Marks</span>
-                                <strong>15 Marks</strong>
-                            </div>
-
-                        </div>
-
-                        <button class="assignment-action">
+                        <button
+                            class="assignment-action"
+                            type="button"
+                        >
                             View Assignment
                         </button>
 
-                    </article>
+                    </div>
 
-                </div>
+                </article>
 
 
-                <!-- NO RESULTS -->
+                <!-- ASSIGNMENT 4 -->
 
-                <div id="noAssignments">
-                    No assignments found for this filter.
-                </div>
+                <article
+                    class="assignment-card"
+                    data-status="completed"
+                >
 
-            </section>
+                    <div class="assignment-card-top">
+
+                        <div class="assignment-icon">
+                            CN
+                        </div>
+
+                        <span class="assignment-status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="assignment-card-content">
+
+                        <span class="assignment-course">
+                            CS-607 • Computer Networks
+                        </span>
+
+                        <h3>
+                            Network Architecture
+                        </h3>
+
+                        <p>
+                            Explain the architecture and major components
+                            of a modern computer network.
+                        </p>
+
+
+                        <div class="assignment-meta">
+
+                            <div>
+
+                                <span>
+                                    Completed
+                                </span>
+
+                                <strong>
+                                    Aug 30, 2026
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Marks
+                                </span>
+
+                                <strong>
+                                    15
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="assignment-action"
+                            type="button"
+                        >
+                            View Assignment
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- NO ASSIGNMENTS -->
+
+            <div
+                id="noAssignments"
+                style="display: none;"
+            >
+
+                <h3>
+                    No assignments found
+                </h3>
+
+                <p>
+                    There are no assignments in this category.
+                </p>
+
+            </div>
 
 
             <!-- FOOTER -->
 
             <footer class="dashboard-footer">
-                <p>© 2026 UniCore Student Portal. Learn. Grow. Achieve.</p>
+
+                <p>
+                    © 2026 UniCore Student Portal.
+                    All rights reserved.
+                </p>
+
+                <span>
+                    Learn. Grow. Achieve.
+                </span>
+
             </footer>
 
-        </main>
+        </section>
 
-    </div>
+    </main>
+
+</div>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 
