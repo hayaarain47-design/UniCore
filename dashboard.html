@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,125 +10,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-<div class="dashboard-layout">
+<div class="portal">
 
-
-    <!-- =========================================
-         SIDEBAR
-    ========================================== -->
+    <!-- SIDEBAR -->
 
     <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-brand">
-
-            <div class="brand-mark">
-                U
-            </div>
-
-            <div>
-                <h2>UniCore</h2>
-                <span>Student Portal</span>
-            </div>
-
+            <h1>UniCore</h1>
+            <span>Student Portal</span>
         </div>
-
 
         <nav class="sidebar-nav">
 
-            <a href="dashboard.html" class="nav-item active">
-
-                <span class="nav-icon">⌂</span>
-
+            <a href="dashboard.html" class="active">
                 <span>Dashboard</span>
-
             </a>
 
-
-            <a href="courses.html" class="nav-item">
-
-                <span class="nav-icon">▣</span>
-
+            <a href="courses.html">
                 <span>Courses</span>
-
             </a>
 
-
-            <a href="assignments.html" class="nav-item">
-
-                <span class="nav-icon">✓</span>
-
+            <a href="assignments.html">
                 <span>Assignments</span>
-
             </a>
 
-
-            <a href="timetable.html" class="nav-item">
-
-                <span class="nav-icon">▦</span>
-
+            <a href="timetable.html">
                 <span>Timetable</span>
-
             </a>
 
-
-            <a href="results.html" class="nav-item">
-
-                <span class="nav-icon">▤</span>
-
+            <a href="results.html">
                 <span>Results</span>
-
             </a>
 
-
-            <a href="announcements.html" class="nav-item">
-
-                <span class="nav-icon">●</span>
-
+            <a href="announcements.html">
                 <span>Announcements</span>
-
             </a>
 
-
-            <a href="profile.html" class="nav-item">
-
-                <span class="nav-icon">◯</span>
-
+            <a href="profile.html">
                 <span>Profile</span>
+            </a>
 
+            <a href="help.html">
+                <span>Help & Support</span>
             </a>
 
         </nav>
 
-
         <div class="sidebar-bottom">
 
-            <a href="#" class="nav-item">
-
-                <span class="nav-icon">?</span>
-
-                <span>Need Help?</span>
-
-            </a>
-
-
             <button class="logout-button" id="logoutButton">
-
-                <span class="nav-icon">↪</span>
-
-                <span>Logout</span>
-
+                Logout
             </button>
 
         </div>
@@ -137,24 +75,14 @@
     </aside>
 
 
+    <!-- MOBILE OVERLAY -->
 
-    <!-- =========================================
-         MOBILE OVERLAY
-    ========================================== -->
-
-    <div
-        class="sidebar-overlay"
-        id="sidebarOverlay">
-    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 
+    <!-- MAIN AREA -->
 
-    <!-- =========================================
-         MAIN CONTENT
-    ========================================== -->
-
-    <main class="main-content">
-
+    <main class="main-area">
 
         <!-- HEADER -->
 
@@ -162,47 +90,30 @@
 
             <div class="header-left">
 
-                <button
-                    class="menu-toggle"
-                    id="menuToggle">
-
+                <button class="menu-toggle" id="menuToggle">
                     ☰
-
                 </button>
 
-
                 <div>
-
                     <span class="header-label">
                         STUDENT PORTAL
                     </span>
 
-                    <h1>
-                        Dashboard
-                    </h1>
-
+                    <h2>Dashboard</h2>
                 </div>
 
             </div>
 
 
-            <div class="header-profile">
+            <div class="mini-profile">
 
                 <div class="mini-avatar">
-                    T
+                    TW
                 </div>
 
-
-                <div class="mini-profile-info">
-
-                    <strong>
-                        Tooba Waheed
-                    </strong>
-
-                    <span>
-                        Computer Science
-                    </span>
-
+                <div>
+                    <strong>Tooba Waheed</strong>
+                    <span>Computer Science</span>
                 </div>
 
             </div>
@@ -210,101 +121,73 @@
         </header>
 
 
-
-        <!-- =========================================
-             DASHBOARD CONTENT
-        ========================================== -->
+        <!-- DASHBOARD CONTENT -->
 
         <section class="dashboard-content">
-
 
             <!-- WELCOME CARD -->
 
             <div class="welcome-card">
 
-                <div class="welcome-content">
+                <div>
 
                     <span class="section-label">
-                        WELCOME BACK
+                        STUDENT DASHBOARD
                     </span>
 
-                    <h2>
+                    <h1>
                         Hello, Tooba!
-                    </h2>
+                    </h1>
 
                     <p>
-                        Stay organized, keep learning and make
-                        progress toward your academic goals.
+                        Welcome back to your UniCore student portal.
+                        Stay organized, track your progress and keep
+                        moving toward your academic goals.
                     </p>
 
                 </div>
 
-
                 <div class="welcome-date">
 
-                    <span>
-                        Academic Year
-                    </span>
+                    <span>ACADEMIC YEAR</span>
 
-                    <strong>
-                        2026
-                    </strong>
+                    <strong>2026</strong>
 
                 </div>
 
             </div>
 
 
-
-            <!-- =========================================
-                 STATS
-            ========================================== -->
+            <!-- STATISTICS -->
 
             <div class="stats-grid">
 
-
                 <div class="stat-card">
 
                     <div class="stat-icon">
-                        C
+                        06
                     </div>
 
                     <div>
-
-                        <span>
-                            Enrolled Courses
-                        </span>
-
-                        <strong>
-                            06
-                        </strong>
-
+                        <span>Enrolled Courses</span>
+                        <strong>06</strong>
                     </div>
 
                 </div>
 
 
-
                 <div class="stat-card">
 
                     <div class="stat-icon">
-                        A
+                        04
                     </div>
 
                     <div>
-
-                        <span>
-                            Assignments
-                        </span>
-
-                        <strong>
-                            04
-                        </strong>
-
+                        <span>Assignments</span>
+                        <strong>04</strong>
                     </div>
 
                 </div>
-
 
 
                 <div class="stat-card">
@@ -314,37 +197,22 @@
                     </div>
 
                     <div>
-
-                        <span>
-                            Attendance
-                        </span>
-
-                        <strong>
-                            92%
-                        </strong>
-
+                        <span>Attendance</span>
+                        <strong>92%</strong>
                     </div>
 
                 </div>
 
 
-
                 <div class="stat-card">
 
                     <div class="stat-icon">
-                        G
+                        GPA
                     </div>
 
                     <div>
-
-                        <span>
-                            Current GPA
-                        </span>
-
-                        <strong>
-                            3.38
-                        </strong>
-
+                        <span>Current GPA</span>
+                        <strong>3.38</strong>
                     </div>
 
                 </div>
@@ -352,13 +220,9 @@
             </div>
 
 
-
-            <!-- =========================================
-                 DASHBOARD COLUMNS
-            ========================================== -->
+            <!-- DASHBOARD COLUMNS -->
 
             <div class="dashboard-columns">
-
 
                 <!-- TODAY'S CLASSES -->
 
@@ -367,115 +231,77 @@
                     <div class="card-heading">
 
                         <div>
-
                             <span class="section-label">
                                 SCHEDULE
                             </span>
 
-                            <h3>
-                                Today's Classes
-                            </h3>
-
+                            <h2>Today's Classes</h2>
                         </div>
 
                         <a href="timetable.html">
-                            View Schedule
+                            View Timetable
                         </a>
 
                     </div>
 
 
-
                     <div class="class-list">
 
-
                         <div class="class-item">
 
                             <div class="class-time">
-
-                                <strong>
-                                    09:00
-                                </strong>
-
-                                <span>
-                                    AM
-                                </span>
-
+                                <strong>09:00</strong>
+                                <span>AM</span>
                             </div>
 
-
                             <div class="class-info">
-
-                                <strong>
+                                <h3>
                                     Advanced Database Systems
-                                </strong>
+                                </h3>
 
-                                <span>
-                                    Room 204 · Dr. Ahmed
-                                </span>
-
+                                <p>
+                                    Room 204 • Dr. Ahmed
+                                </p>
                             </div>
 
                         </div>
 
 
-
                         <div class="class-item">
 
                             <div class="class-time">
-
-                                <strong>
-                                    11:00
-                                </strong>
-
-                                <span>
-                                    AM
-                                </span>
-
+                                <strong>11:00</strong>
+                                <span>AM</span>
                             </div>
 
-
                             <div class="class-info">
-
-                                <strong>
+                                <h3>
                                     Artificial Intelligence
-                                </strong>
+                                </h3>
 
-                                <span>
-                                    Lab 03 · Dr. Hassan
-                                </span>
-
+                                <p>
+                                    Lab 03 • Dr. Hassan
+                                </p>
                             </div>
 
                         </div>
 
 
-
                         <div class="class-item">
 
                             <div class="class-time">
-
-                                <strong>
-                                    02:00
-                                </strong>
-
-                                <span>
-                                    PM
-                                </span>
-
+                                <strong>02:00</strong>
+                                <span>PM</span>
                             </div>
 
-
                             <div class="class-info">
-
-                                <strong>
+                                <h3>
                                     Software Engineering
-                                </strong>
+                                </h3>
 
-                                <span>
-                                    Room 108 · Ms. Sara
-                                </span>
-
+                                <p>
+                                    Room 108 • Ms. Sara
+                                </p>
                             </div>
 
                         </div>
@@ -483,7 +309,6 @@
                     </div>
 
                 </div>
-
 
 
                 <!-- UPCOMING ASSIGNMENTS -->
@@ -493,15 +318,11 @@
                     <div class="card-heading">
 
                         <div>
-
                             <span class="section-label">
                                 DEADLINES
                             </span>
 
-                            <h3>
-                                Upcoming Assignments
-                            </h3>
-
+                            <h2>Upcoming Assignments</h2>
                         </div>
 
                         <a href="assignments.html">
@@ -511,71 +332,70 @@
                     </div>
 
 
-
                     <div class="assignment-list">
 
-
                         <div class="assignment-item">
 
-                            <div>
+                            <div class="assignment-date">
+                                <strong>08</strong>
+                                <span>SEP</span>
+                            </div>
 
-                                <strong>
+                            <div class="assignment-info">
+
+                                <h3>
                                     Database Project
-                                </strong>
+                                </h3>
 
-                                <span>
+                                <p>
                                     Advanced Database Systems
-                                </span>
+                                </p>
 
                             </div>
-
-                            <time>
-                                Sep 08
-                            </time>
 
                         </div>
 
 
-
                         <div class="assignment-item">
 
-                            <div>
+                            <div class="assignment-date">
+                                <strong>11</strong>
+                                <span>SEP</span>
+                            </div>
 
-                                <strong>
+                            <div class="assignment-info">
+
+                                <h3>
                                     AI Research Task
-                                </strong>
+                                </h3>
 
-                                <span>
+                                <p>
                                     Artificial Intelligence
-                                </span>
+                                </p>
 
                             </div>
-
-                            <time>
-                                Sep 11
-                            </time>
 
                         </div>
 
 
-
                         <div class="assignment-item">
 
-                            <div>
-
-                                <strong>
-                                    Software Design
-                                </strong>
-
-                                <span>
-                                    Software Engineering
-                                </span>
-
+                            <div class="assignment-date">
+                                <strong>15</strong>
+                                <span>SEP</span>
                             </div>
 
-                            <time>
-                                Sep 15
-                            </time>
+                            <div class="assignment-info">
+
+                                <h3>
+                                    Software Design
+                                </h3>
+
+                                <p>
+                                    Software Engineering
+                                </p>
+
+                            </div>
 
                         </div>
 
@@ -586,46 +406,38 @@
             </div>
 
 
+            <!-- STUDY REMINDERS -->
 
-            <!-- =========================================
-                 STUDY REMINDERS
-            ========================================== -->
-
-            <div class="study-reminders">
-
+            <div class="dashboard-card study-reminders">
 
                 <div class="reminders-header">
 
                     <div>
 
                         <span class="section-label">
-                            STAY ORGANIZED
+                            PERSONAL ORGANIZER
                         </span>
 
-                        <h3>
-                            Study Reminders
-                        </h3>
+                        <h2>Study Reminders</h2>
 
                     </div>
 
-
                     <button
                         class="add-reminder-button"
-                        id="addReminderButton">
-
+                        id="addReminderButton"
+                    >
                         + Add Reminder
-
                     </button>
 
                 </div>
-
 
 
                 <!-- REMINDER FORM -->
 
                 <div
                     class="reminder-form"
-                    id="reminderForm">
+                    id="reminderForm"
+                >
 
                     <input
                         type="text"
@@ -633,33 +445,30 @@
                         placeholder="Enter your study reminder..."
                     >
 
-
                     <button
-                        id="saveReminderButton">
-
+                        type="button"
+                        id="saveReminderButton"
+                    >
                         Save
-
                     </button>
 
-
                     <button
+                        type="button"
+                        id="cancelReminderButton"
                         class="cancel-reminder"
-                        id="cancelReminderButton">
-
+                    >
                         Cancel
-
                     </button>
 
                 </div>
 
 
-
-                <!-- REMINDERS LIST -->
+                <!-- REMINDERS -->
 
                 <div
                     class="reminders-list"
-                    id="remindersList">
-
+                    id="remindersList"
+                >
 
                     <div class="reminder-item">
 
@@ -678,7 +487,6 @@
                         </span>
 
                     </div>
-
 
 
                     <div class="reminder-item">
@@ -700,7 +508,6 @@
                     </div>
 
 
-
                     <div class="reminder-item">
 
                         <label>
@@ -719,171 +526,111 @@
 
                     </div>
 
-
                 </div>
 
             </div>
 
 
+            <!-- PROGRESS -->
 
-            <!-- =========================================
-                 SEMESTER PROGRESS
-            ========================================== -->
-
-            <div class="dashboard-card progress-dashboard-card">
+            <div class="dashboard-card">
 
                 <div class="card-heading">
 
                     <div>
 
                         <span class="section-label">
-                            ACADEMIC PERFORMANCE
+                            ACADEMIC OVERVIEW
                         </span>
 
-                        <h3>
-                            Semester Progress
-                        </h3>
+                        <h2>Semester Progress</h2>
 
                     </div>
-
-                    <strong class="overall-progress">
-                        68%
-                    </strong>
 
                 </div>
 
 
-
                 <div class="progress-list">
 
+                    <div class="progress-item">
 
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Overall Progress
-                            </span>
-
-                            <strong>
-                                68%
-                            </strong>
-
+                        <div class="progress-heading">
+                            <span>Overall Progress</span>
+                            <strong>68%</strong>
                         </div>
 
-
                         <div class="progress-track">
-
                             <div
                                 class="progress-fill"
-                                style="width: 68%;">
-                            </div>
-
+                                style="width: 68%;"
+                            ></div>
                         </div>
 
                     </div>
 
 
+                    <div class="progress-item">
 
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Assignments
-                            </span>
-
-                            <strong>
-                                75%
-                            </strong>
-
+                        <div class="progress-heading">
+                            <span>Assignments</span>
+                            <strong>75%</strong>
                         </div>
 
-
                         <div class="progress-track">
-
                             <div
                                 class="progress-fill"
-                                style="width: 75%;">
-                            </div>
-
+                                style="width: 75%;"
+                            ></div>
                         </div>
 
                     </div>
 
 
+                    <div class="progress-item">
 
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Attendance
-                            </span>
-
-                            <strong>
-                                92%
-                            </strong>
-
+                        <div class="progress-heading">
+                            <span>Attendance</span>
+                            <strong>92%</strong>
                         </div>
 
-
                         <div class="progress-track">
-
                             <div
                                 class="progress-fill"
-                                style="width: 92%;">
-                            </div>
-
+                                style="width: 92%;"
+                            ></div>
                         </div>
 
                     </div>
 
 
+                    <div class="progress-item">
 
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Course Completion
-                            </span>
-
-                            <strong>
-                                68%
-                            </strong>
-
+                        <div class="progress-heading">
+                            <span>Course Completion</span>
+                            <strong>68%</strong>
                         </div>
 
-
                         <div class="progress-track">
-
                             <div
                                 class="progress-fill"
-                                style="width: 68%;">
-                            </div>
-
+                                style="width: 68%;"
+                            ></div>
                         </div>
 
                     </div>
-
 
                 </div>
 
             </div>
 
 
+            <!-- LATEST ANNOUNCEMENT -->
 
-            <!-- =========================================
-                 LATEST ANNOUNCEMENT
-            ========================================== -->
-
-            <div class="announcement-card dashboard-announcement">
+            <div class="dashboard-card announcement-card">
 
                 <div class="announcement-icon">
                     !
                 </div>
-
 
                 <div class="announcement-content">
 
@@ -891,50 +638,42 @@
                         LATEST ANNOUNCEMENT
                     </span>
 
-                    <h3>
+                    <h2>
                         Mid-Semester Assessments
-                    </h3>
+                    </h2>
 
                     <p>
                         Mid-semester assessments will begin from
-                        September 21, 2026. Please review your
-                        course schedules and prepare accordingly.
+                        September 21, 2026. Students are advised to
+                        review their course schedules and prepare
+                        accordingly.
                     </p>
 
+                    <a href="announcements.html">
+                        View All Announcements
+                    </a>
+
                 </div>
-
-
-                <a
-                    href="announcements.html"
-                    class="announcement-link">
-
-                    View All
-
-                </a>
 
             </div>
 
 
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 UniCore Student Portal.
+                    All rights reserved.
+                </p>
+
+                <span>
+                    Learn. Grow. Achieve.
+                </span>
+
+            </footer>
+
         </section>
-
-
-
-        <!-- =========================================
-             FOOTER
-        ========================================== -->
-
-        <footer class="dashboard-footer">
-
-            <span>
-                © 2026 UniCore Student Portal
-            </span>
-
-            <span>
-                Learn. Grow. Achieve.
-            </span>
-
-        </footer>
-
 
     </main>
 
