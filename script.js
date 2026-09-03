@@ -285,3 +285,14 @@ assignmentButtons.forEach(function (button) {
     });
 
 });
+// =========================================
+// TIMETABLE PRINT
+// =========================================
+
+const printTimetable = document.getElementById("printTimetable");
+
+if (printTimetable) {
+    printTimetable.addEventListener("click", function () {
+        window.print();
+    });
+}
