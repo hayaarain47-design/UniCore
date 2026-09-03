@@ -201,3 +201,87 @@ courseButtons.forEach(function (button) {
     });
 
 });
+// =========================================
+// ASSIGNMENTS PAGE FUNCTIONALITY
+// =========================================
+
+const assignmentFilter = document.getElementById("assignmentFilter");
+const assignmentsGrid = document.getElementById("assignmentsGrid");
+const noAssignments = document.getElementById("noAssignments");
+
+if (assignmentFilter && assignmentsGrid) {
+
+    assignmentFilter.addEventListener("change", function () {
+
+        const selectedStatus = this.value;
+        const assignmentCards =
+            assignmentsGrid.querySelectorAll(".assignment-card");
+
+        let visibleAssignments = 0;
+
+        assignmentCards.forEach(function (card) {
+
+            const cardStatus = card.dataset.status;
+
+            if (
+                selectedStatus === "all" ||
+                cardStatus === selectedStatus
+            ) {
+                card.style.display = "";
+                visibleAssignments++;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (noAssignments) {
+            noAssignments.style.display =
+                visibleAssignments === 0 ? "block" : "none";
+        }
+
+    });
+}
+
+
+// =========================================
+// ASSIGNMENT ACTION BUTTONS
+// =========================================
+
+const assignmentButtons =
+    document.querySelectorAll(".assignment-action");
+
+assignmentButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const assignmentCard =
+            this.closest(".assignment-card");
+
+        if (!assignmentCard) return;
+
+        const assignmentName =
+            assignmentCard.querySelector("h4")?.textContent ||
+            "Assignment";
+
+        const courseName =
+            assignmentCard.querySelector(".assignment-course")?.textContent ||
+            "Course";
+
+        const status =
+            assignmentCard.querySelector(".assignment-status")?.textContent ||
+            "Pending";
+
+        alert(
+            "Assignment Details\n\n" +
+            assignmentName +
+            "\n" +
+            courseName +
+            "\n\nStatus: " +
+            status +
+            "\n\nDetailed assignment information will be available in the next portal update."
+        );
+
+    });
+
+});
