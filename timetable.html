@@ -10,173 +10,230 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="dashboard-layout">
+<div class="portal">
 
-        <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
 
-        <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar">
 
-            <div class="sidebar-brand">
-                <h1>UniCore</h1>
-                <span>Student Portal</span>
-            </div>
+        <div class="sidebar-brand">
+            <h1>UniCore</h1>
+            <span>Student Portal</span>
+        </div>
 
-            <nav class="sidebar-nav">
+        <nav class="sidebar-nav">
 
-                <a href="dashboard.html" class="nav-link">
-                    <span class="nav-icon">⌂</span>
-                    <span>Dashboard</span>
-                </a>
+            <a href="dashboard.html">
+                <span>Dashboard</span>
+            </a>
 
-                <a href="courses.html" class="nav-link">
-                    <span class="nav-icon">▣</span>
-                    <span>Courses</span>
-                </a>
+            <a href="courses.html">
+                <span>Courses</span>
+            </a>
 
-                <a href="assignments.html" class="nav-link">
-                    <span class="nav-icon">✓</span>
-                    <span>Assignments</span>
-                </a>
+            <a href="assignments.html">
+                <span>Assignments</span>
+            </a>
 
-                <a href="timetable.html" class="nav-link active">
-                    <span class="nav-icon">◷</span>
-                    <span>Timetable</span>
-                </a>
+            <a href="timetable.html" class="active">
+                <span>Timetable</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">▤</span>
-                    <span>Results</span>
-                </a>
+            <a href="results.html">
+                <span>Results</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">●</span>
-                    <span>Announcements</span>
-                </a>
+            <a href="announcements.html">
+                <span>Announcements</span>
+            </a>
 
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◌</span>
-                    <span>Profile</span>
-                </a>
+            <a href="profile.html">
+                <span>Profile</span>
+            </a>
 
-            </nav>
+            <a href="help.html">
+                <span>Help & Support</span>
+            </a>
 
-            <div class="sidebar-bottom">
+        </nav>
 
-                <a href="#" class="help-link">
-                    Need Help?
-                </a>
+        <div class="sidebar-bottom">
 
-                <button class="logout-button" id="logoutBtn">
-                    Logout
+            <button class="logout-button" id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN AREA -->
+
+    <main class="main-area">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
                 </button>
 
+                <div>
+
+                    <span class="header-label">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h2>Timetable</h2>
+
+                </div>
+
             </div>
 
-        </aside>
 
+            <div class="mini-profile">
 
-        <!-- MOBILE OVERLAY -->
-
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-
-        <!-- MAIN CONTENT -->
-
-        <main class="dashboard-content">
-
-            <!-- HEADER -->
-
-            <header class="dashboard-header">
-
-                <div class="header-left">
-
-                    <button class="menu-toggle" id="menuToggle">
-                        ☰
-                    </button>
-
-                    <div>
-                        <span class="header-label">STUDENT PORTAL</span>
-                        <h2>Timetable</h2>
-                    </div>
-
+                <div class="mini-avatar">
+                    TW
                 </div>
-
-                <div class="header-profile">
-
-                    <div class="mini-profile">
-                        <strong>Tooba Waheed</strong>
-                        <span>Computer Science</span>
-                    </div>
-
-                    <div class="profile-avatar">
-                        TW
-                    </div>
-
-                </div>
-
-            </header>
-
-
-            <!-- PAGE INTRO -->
-
-            <section class="timetable-intro">
 
                 <div>
-                    <h2>Weekly Timetable</h2>
-                    <p>View your classes and academic schedule for the week.</p>
+
+                    <strong>Tooba Waheed</strong>
+
+                    <span>
+                        Computer Science
+                    </span>
+
                 </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="dashboard-content">
+
+            <!-- INTRO -->
+
+            <div class="timetable-intro">
+
+                <div>
+
+                    <span class="section-label">
+                        CLASS SCHEDULE
+                    </span>
+
+                    <h1>
+                        Weekly Timetable
+                    </h1>
+
+                    <p>
+                        View your weekly class schedule and keep track
+                        of your upcoming academic sessions.
+                    </p>
+
+                </div>
+
 
                 <div class="timetable-semester">
-                    <span>Current Semester</span>
-                    <strong>Fall 2026</strong>
+
+                    <span>
+                        CURRENT SEMESTER
+                    </span>
+
+                    <strong>
+                        Fall 2026
+                    </strong>
+
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- TODAY CARD -->
+            <!-- NEXT CLASS -->
 
-            <section class="today-class-card">
+            <div class="today-class-card">
 
                 <div class="today-class-icon">
-                    TODAY
+                    →
                 </div>
+
 
                 <div class="today-class-info">
-                    <span>Next Class</span>
-                    <h3>Advanced Database Systems</h3>
-                    <p>09:00 AM · Room 204 · Dr. Ahmed</p>
+
+                    <span class="section-label">
+                        TODAY'S NEXT CLASS
+                    </span>
+
+                    <h2>
+                        Advanced Database Systems
+                    </h2>
+
+                    <p>
+                        Dr. Ahmed • Room 204
+                    </p>
+
                 </div>
+
 
                 <div class="today-class-time">
-                    <strong>09:00</strong>
-                    <span>AM</span>
+
+                    <strong>
+                        09:00
+                    </strong>
+
+                    <span>
+                        AM
+                    </span>
+
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- WEEKLY SCHEDULE -->
+            <!-- TIMETABLE -->
 
             <section class="timetable-section">
 
                 <div class="timetable-heading">
 
                     <div>
-                        <h3>Class Schedule</h3>
-                        <p>Fall 2026 weekly academic schedule.</p>
+
+                        <span class="section-label">
+                            WEEKLY SCHEDULE
+                        </span>
+
+                        <h2>
+                            Class Schedule
+                        </h2>
+
                     </div>
 
-                    <button class="print-timetable" id="printTimetable">
+
+                    <button
+                        class="print-timetable"
+                        id="printTimetable"
+                        type="button"
+                    >
                         Print Timetable
                     </button>
 
@@ -190,15 +247,35 @@
                         <thead>
 
                             <tr>
-                                <th>Time</th>
-                                <th>Monday</th>
-                                <th>Tuesday</th>
-                                <th>Wednesday</th>
-                                <th>Thursday</th>
-                                <th>Friday</th>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Monday
+                                </th>
+
+                                <th>
+                                    Tuesday
+                                </th>
+
+                                <th>
+                                    Wednesday
+                                </th>
+
+                                <th>
+                                    Thursday
+                                </th>
+
+                                <th>
+                                    Friday
+                                </th>
+
                             </tr>
 
                         </thead>
+
 
                         <tbody>
 
@@ -209,37 +286,55 @@
                                 </td>
 
                                 <td>
+
                                     <div class="class-box">
-                                        <strong>Advanced Database Systems</strong>
-                                        <span>Room 204</span>
-                                        <small>Dr. Ahmed</small>
+
+                                        <strong>
+                                            Advanced Database Systems
+                                        </strong>
+
+                                        <span>
+                                            Room 204
+                                        </span>
+
+                                        <small>
+                                            Dr. Ahmed
+                                        </small>
+
                                     </div>
+
+                                </td>
+
+                                <td class="empty">
+                                    —
+                                </td>
+
+                                <td class="empty">
+                                    —
+                                </td>
+
+                                <td class="empty">
+                                    —
                                 </td>
 
                                 <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
-
-                                <td>
                                     <div class="class-box">
-                                        <strong>Research Methodology</strong>
-                                        <span>Room 201</span>
-                                        <small>Dr. Fatima</small>
+
+                                        <strong>
+                                            Research Methodology
+                                        </strong>
+
+                                        <span>
+                                            Room 301
+                                        </span>
+
+                                        <small>
+                                            Dr. Fatima
+                                        </small>
+
                                     </div>
+
                                 </td>
 
                             </tr>
@@ -251,36 +346,40 @@
                                     10:00 AM
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
+                                </td>
+
+                                <td class="empty">
+                                    —
+                                </td>
+
+                                <td class="empty">
+                                    —
                                 </td>
 
                                 <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
-
-                                <td>
                                     <div class="class-box">
-                                        <strong>Computer Networks</strong>
-                                        <span>Room 105</span>
-                                        <small>Dr. Ali</small>
+
+                                        <strong>
+                                            Computer Networks
+                                        </strong>
+
+                                        <span>
+                                            Room 205
+                                        </span>
+
+                                        <small>
+                                            Dr. Ali
+                                        </small>
+
                                     </div>
+
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
                             </tr>
@@ -292,36 +391,40 @@
                                     11:00 AM
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
                                 <td>
+
                                     <div class="class-box">
-                                        <strong>Artificial Intelligence</strong>
-                                        <span>Lab 03</span>
-                                        <small>Dr. Hassan</small>
+
+                                        <strong>
+                                            Artificial Intelligence
+                                        </strong>
+
+                                        <span>
+                                            Lab 03
+                                        </span>
+
+                                        <small>
+                                            Dr. Hassan
+                                        </small>
+
                                     </div>
+
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
                             </tr>
@@ -334,37 +437,55 @@
                                 </td>
 
                                 <td>
+
                                     <div class="class-box">
-                                        <strong>Advanced Programming</strong>
-                                        <span>Lab 02</span>
-                                        <small>Mr. Hamza</small>
+
+                                        <strong>
+                                            Advanced Programming
+                                        </strong>
+
+                                        <span>
+                                            Lab 02
+                                        </span>
+
+                                        <small>
+                                            Mr. Hamza
+                                        </small>
+
                                     </div>
+
+                                </td>
+
+                                <td class="empty">
+                                    —
                                 </td>
 
                                 <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
-                                </td>
 
-                                <td>
                                     <div class="class-box">
-                                        <strong>Software Engineering</strong>
-                                        <span>Room 108</span>
-                                        <small>Ms. Sara</small>
+
+                                        <strong>
+                                            Software Engineering
+                                        </strong>
+
+                                        <span>
+                                            Room 108
+                                        </span>
+
+                                        <small>
+                                            Ms. Sara
+                                        </small>
+
                                     </div>
+
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
-                                <td>
-                                    <div class="class-box empty">
-                                        —
-                                    </div>
+                                <td class="empty">
+                                    —
                                 </td>
 
                             </tr>
@@ -378,18 +499,35 @@
             </section>
 
 
-            <!-- WEEKLY NOTES -->
+            <!-- NOTES -->
 
             <section class="schedule-notes">
 
                 <div class="schedule-note">
-                    <strong>Class Duration</strong>
-                    <span>Each class is scheduled for approximately 90 minutes.</span>
+
+                    <strong>
+                        Schedule Reminder
+                    </strong>
+
+                    <p>
+                        Please arrive at least 10 minutes before
+                        your scheduled class.
+                    </p>
+
                 </div>
 
+
                 <div class="schedule-note">
-                    <strong>Important</strong>
-                    <span>Check announcements regularly for any schedule changes.</span>
+
+                    <strong>
+                        Weekly Planning
+                    </strong>
+
+                    <p>
+                        Use your Study Reminders to organize revision
+                        and preparation around your classes.
+                    </p>
+
                 </div>
 
             </section>
@@ -398,15 +536,26 @@
             <!-- FOOTER -->
 
             <footer class="dashboard-footer">
-                <p>© 2026 UniCore Student Portal. Learn. Grow. Achieve.</p>
+
+                <p>
+                    © 2026 UniCore Student Portal.
+                    All rights reserved.
+                </p>
+
+                <span>
+                    Learn. Grow. Achieve.
+                </span>
+
             </footer>
 
-        </main>
+        </section>
 
-    </div>
+    </main>
+
+</div>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 
