@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcements | UniCore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-mark">U</div>
+
+            <div>
+                <h2>UniCore</h2>
+                <span>Student Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="courses.html" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Courses</span>
+            </a>
+
+            <a href="assignments.html" class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Assignments</span>
+            </a>
+
+            <a href="timetable.html" class="nav-item">
+                <span class="nav-icon">▦</span>
+                <span>Timetable</span>
+            </a>
+
+            <a href="results.html" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Results</span>
+            </a>
+
+            <a href="announcements.html" class="nav-item active">
+                <span class="nav-icon">●</span>
+                <span>Announcements</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">◯</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">?</span>
+                <span>Need Help?</span>
+            </a>
+
+            <button class="logout-button" id="logoutButton">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
+                </button>
+
+                <div>
+                    <span class="header-label">STUDENT PORTAL</span>
+                    <h1>Announcements</h1>
+                </div>
+
+            </div>
+
+
+            <div class="header-profile">
+
+                <div class="mini-avatar">
+                    T
+                </div>
+
+                <div class="mini-profile-info">
+                    <strong>Tooba Waheed</strong>
+                    <span>Computer Science</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="dashboard-content">
+
+            <!-- INTRO -->
+
+            <div class="announcements-intro">
+
+                <div>
+                    <span class="section-label">UNIVERSITY UPDATES</span>
+
+                    <h2>Announcements</h2>
+
+                    <p>
+                        Stay updated with the latest academic notices,
+                        university events, deadlines and important information.
+                    </p>
+                </div>
+
+                <div class="announcement-semester">
+                    <span>Current Semester</span>
+                    <strong>Fall 2026</strong>
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="announcement-toolbar">
+
+                <div class="announcement-filter">
+
+                    <button class="announcement-filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="announcement-filter-btn" data-filter="academic">
+                        Academic
+                    </button>
+
+                    <button class="announcement-filter-btn" data-filter="events">
+                        Events
+                    </button>
+
+                    <button class="announcement-filter-btn" data-filter="general">
+                        General
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANNOUNCEMENTS -->
+
+            <div class="announcements-list" id="announcementsList">
+
+
+                <!-- ANNOUNCEMENT 1 -->
+
+                <article class="announcement-card" data-category="academic">
+
+                    <div class="announcement-card-icon academic-icon">
+                        A
+                    </div>
+
+                    <div class="announcement-card-content">
+
+                        <div class="announcement-card-top">
+
+                            <div>
+                                <span class="announcement-category">
+                                    Academic
+                                </span>
+
+                                <h3>
+                                    Mid-Semester Assessments
+                                </h3>
+                            </div>
+
+                            <span class="announcement-date">
+                                Sep 03, 2026
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Mid-semester assessments will begin from
+                            September 21, 2026. Students are advised to
+                            review their course schedules and prepare
+                            accordingly.
+                        </p>
+
+                        <div class="announcement-footer">
+
+                            <span>
+                                Office of Academic Affairs
+                            </span>
+
+                            <button class="announcement-read">
+                                Read More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ANNOUNCEMENT 2 -->
+
+                <article class="announcement-card" data-category="academic">
+
+                    <div class="announcement-card-icon academic-icon">
+                        D
+                    </div>
+
+                    <div class="announcement-card-content">
+
+                        <div class="announcement-card-top">
+
+                            <div>
+                                <span class="announcement-category">
+                                    Academic
+                                </span>
+
+                                <h3>
+                                    Assignment Submission Reminder
+                                </h3>
+                            </div>
+
+                            <span class="announcement-date">
+                                Sep 02, 2026
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Students are reminded to submit their pending
+                            assignments before the respective deadlines.
+                            Late submissions may affect academic progress.
+                        </p>
+
+                        <div class="announcement-footer">
+
+                            <span>
+                                Department of Computer Science
+                            </span>
+
+                            <button class="announcement-read">
+                                Read More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ANNOUNCEMENT 3 -->
+
+                <article class="announcement-card" data-category="events">
+
+                    <div class="announcement-card-icon events-icon">
+                        E
+                    </div>
+
+                    <div class="announcement-card-content">
+
+                        <div class="announcement-card-top">
+
+                            <div>
+                                <span class="announcement-category">
+                                    Events
+                                </span>
+
+                                <h3>
+                                    University Tech Seminar
+                                </h3>
+                            </div>
+
+                            <span class="announcement-date">
+                                Sep 01, 2026
+                            </span>
+
+                        </div>
+
+                        <p>
+                            A technology seminar will be held on campus
+                            featuring discussions about emerging trends
+                            in Artificial Intelligence and Software
+                            Development.
+                        </p>
+
+                        <div class="announcement-footer">
+
+                            <span>
+                                Student Affairs Office
+                            </span>
+
+                            <button class="announcement-read">
+                                Read More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ANNOUNCEMENT 4 -->
+
+                <article class="announcement-card" data-category="general">
+
+                    <div class="announcement-card-icon general-icon">
+                        G
+                    </div>
+
+                    <div class="announcement-card-content">
+
+                        <div class="announcement-card-top">
+
+                            <div>
+                                <span class="announcement-category">
+                                    General
+                                </span>
+
+                                <h3>
+                                    Library Timing Update
+                                </h3>
+                            </div>
+
+                            <span class="announcement-date">
+                                Aug 30, 2026
+                            </span>
+
+                        </div>
+
+                        <p>
+                            The university library will remain open until
+                            8:00 PM from Monday to Friday to support students
+                            during the semester.
+                        </p>
+
+                        <div class="announcement-footer">
+
+                            <span>
+                                University Library
+                            </span>
+
+                            <button class="announcement-read">
+                                Read More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ANNOUNCEMENT 5 -->
+
+                <article class="announcement-card" data-category="events">
+
+                    <div class="announcement-card-icon events-icon">
+                        W
+                    </div>
+
+                    <div class="announcement-card-content">
+
+                        <div class="announcement-card-top">
+
+                            <div>
+                                <span class="announcement-category">
+                                    Events
+                                </span>
+
+                                <h3>
+                                    Student Welcome Workshop
+                                </h3>
+                            </div>
+
+                            <span class="announcement-date">
+                                Aug 28, 2026
+                            </span>
+
+                        </div>
+
+                        <p>
+                            A student orientation and welcome workshop will
+                            be conducted to help students understand
+                            university resources and academic services.
+                        </p>
+
+                        <div class="announcement-footer">
+
+                            <span>
+                                Student Support Services
+                            </span>
+
+                            <button class="announcement-read">
+                                Read More
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div class="no-announcements" id="noAnnouncements">
+
+                <div class="no-announcements-icon">
+                    !
+                </div>
+
+                <h3>No announcements found</h3>
+
+                <p>
+                    There are no announcements in this category.
+                </p>
+
+            </div>
+
+
+            <!-- INFORMATION NOTE -->
+
+            <div class="announcement-note">
+
+                <div class="announcement-note-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>Stay Informed</strong>
+
+                    <p>
+                        Check this section regularly for important
+                        university announcements, academic deadlines
+                        and student updates.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+            <span>© 2026 UniCore Student Portal</span>
+            <span>Learn. Grow. Achieve.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
