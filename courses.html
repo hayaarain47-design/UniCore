@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses | UniCore</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-logo">U</div>
+
+                <div>
+                    <h2>UniCore</h2>
+                    <span>LEARN. GROW. ACHIEVE.</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link active">
+                    <span class="nav-icon">▦</span>
+                    <span>Courses</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">◷</span>
+                    <span>Timetable</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Results & GPA</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">◉</span>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">○</span>
+                    <span>My Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="help-link">
+                    <span class="nav-icon">?</span>
+                    <span>Need Help?</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span>↪</span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MOBILE OVERLAY -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
+                </button>
+
+                <div class="header-title">
+                    <span>STUDENT PORTAL</span>
+                    <h1>Courses</h1>
+                </div>
+
+                <div class="header-profile">
+
+                    <button class="notification-btn">
+                        ♢
+                    </button>
+
+                    <div class="student-mini-profile">
+
+                        <div class="mini-avatar">
+                            TW
+                        </div>
+
+                        <div>
+                            <strong>Tooba Waheed</strong>
+                            <small>Computer Science</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="dashboard-content">
+
+                <!-- INTRO -->
+                <div class="courses-intro">
+
+                    <div>
+                        <span>ACADEMIC OVERVIEW</span>
+
+                        <h2>My Courses</h2>
+
+                        <p>
+                            View your enrolled courses and monitor your academic progress.
+                        </p>
+                    </div>
+
+                    <div class="semester-box">
+                        <small>CURRENT SEMESTER</small>
+                        <strong>Fall 2026</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- COURSE SUMMARY -->
+                <div class="course-summary">
+
+                    <div class="course-summary-card">
+                        <span>Total Courses</span>
+                        <strong>06</strong>
+                    </div>
+
+                    <div class="course-summary-card">
+                        <span>Total Credits</span>
+                        <strong>18</strong>
+                    </div>
+
+                    <div class="course-summary-card">
+                        <span>In Progress</span>
+                        <strong>05</strong>
+                    </div>
+
+                    <div class="course-summary-card">
+                        <span>Completed</span>
+                        <strong>01</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="courses-toolbar">
+
+                    <div>
+                        <h3>Enrolled Courses</h3>
+                        <p>Computer Science · Fall 2026</p>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="courseSearch"
+                        placeholder="Search courses..."
+                    >
+
+                </div>
+
+
+                <!-- COURSES -->
+                <div class="courses-grid" id="coursesGrid">
+
+
+                    <!-- COURSE 1 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-601</span>
+                            <small>IN PROGRESS</small>
+                        </div>
+
+                        <div class="course-icon">
+                            DB
+                        </div>
+
+                        <h3>Advanced Database Systems</h3>
+
+                        <p>Dr. Ahmed</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Mon · 09:00 AM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>72%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 72%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+
+                    <!-- COURSE 2 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-603</span>
+                            <small>IN PROGRESS</small>
+                        </div>
+
+                        <div class="course-icon">
+                            AI
+                        </div>
+
+                        <h3>Artificial Intelligence</h3>
+
+                        <p>Dr. Hassan</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Tue · 11:00 AM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>64%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 64%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+
+                    <!-- COURSE 3 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-605</span>
+                            <small>IN PROGRESS</small>
+                        </div>
+
+                        <div class="course-icon">
+                            SE
+                        </div>
+
+                        <h3>Software Engineering</h3>
+
+                        <p>Ms. Sara</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Wed · 02:00 PM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>81%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 81%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+
+                    <!-- COURSE 4 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-607</span>
+                            <small>IN PROGRESS</small>
+                        </div>
+
+                        <div class="course-icon">
+                            NW
+                        </div>
+
+                        <h3>Computer Networks</h3>
+
+                        <p>Dr. Ali</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Thu · 10:00 AM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>58%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 58%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+
+                    <!-- COURSE 5 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-609</span>
+                            <small>IN PROGRESS</small>
+                        </div>
+
+                        <div class="course-icon">
+                            RM
+                        </div>
+
+                        <h3>Research Methodology</h3>
+
+                        <p>Dr. Fatima</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Fri · 09:00 AM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>46%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 46%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+
+                    <!-- COURSE 6 -->
+                    <article class="course-card">
+
+                        <div class="course-top">
+                            <span>CS-611</span>
+                            <small class="completed-label">COMPLETED</small>
+                        </div>
+
+                        <div class="course-icon">
+                            AP
+                        </div>
+
+                        <h3>Advanced Programming</h3>
+
+                        <p>Mr. Hamza</p>
+
+                        <div class="course-info">
+
+                            <div>
+                                <small>Credits</small>
+                                <strong>3</strong>
+                            </div>
+
+                            <div>
+                                <small>Schedule</small>
+                                <strong>Mon · 02:00 PM</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="course-progress">
+
+                            <div>
+                                <span>Progress</span>
+                                <strong>100%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <span style="width: 100%;"></span>
+                            </div>
+
+                        </div>
+
+                        <button class="course-btn">
+                            View Course
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+                <!-- NO RESULTS -->
+                <div id="noCourses" class="no-courses">
+                    <h3>No courses found</h3>
+                    <p>Try searching for another course.</p>
+                </div>
+
+
+                <!-- FOOTER -->
+                <footer class="dashboard-footer">
+
+                    <p>
+                        © 2026 UniCore. Learn. Grow. Achieve.
+                    </p>
+
+                    <span>
+                        Student Management Portal
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
