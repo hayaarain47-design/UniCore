@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Profile | UniCore</title>
+    <title>My Profile | UniCore</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,70 +16,80 @@
 
 <body>
 
-<div class="dashboard-layout">
+<div class="portal">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-brand">
-            <div class="brand-mark">U</div>
+
+            <div class="brand-mark">
+                U
+            </div>
 
             <div>
                 <h2>UniCore</h2>
                 <span>Student Portal</span>
             </div>
+
         </div>
+
 
         <nav class="sidebar-nav">
 
-            <a href="dashboard.html" class="nav-item">
-                <span class="nav-icon">⌂</span>
-                <span>Dashboard</span>
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Dashboard
             </a>
 
-            <a href="courses.html" class="nav-item">
-                <span class="nav-icon">▣</span>
-                <span>Courses</span>
+            <a href="courses.html">
+                <span>▣</span>
+                Courses
             </a>
 
-            <a href="assignments.html" class="nav-item">
-                <span class="nav-icon">✓</span>
-                <span>Assignments</span>
+            <a href="assignments.html">
+                <span>✓</span>
+                Assignments
             </a>
 
-            <a href="timetable.html" class="nav-item">
-                <span class="nav-icon">▦</span>
-                <span>Timetable</span>
+            <a href="timetable.html">
+                <span>▦</span>
+                Timetable
             </a>
 
-            <a href="results.html" class="nav-item">
-                <span class="nav-icon">▤</span>
-                <span>Results</span>
+            <a href="results.html">
+                <span>▤</span>
+                Results
             </a>
 
-            <a href="announcements.html" class="nav-item">
-                <span class="nav-icon">●</span>
-                <span>Announcements</span>
+            <a href="announcements.html">
+                <span>◉</span>
+                Announcements
             </a>
 
-            <a href="profile.html" class="nav-item active">
-                <span class="nav-icon">◯</span>
-                <span>Profile</span>
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="profile.html" class="active">
+                <span>◎</span>
+                Profile
+            </a>
+
+            <a href="help.html">
+                <span>?</span>
+                Help & Support
             </a>
 
         </nav>
 
+
         <div class="sidebar-bottom">
 
-            <a href="#" class="nav-item">
-                <span class="nav-icon">?</span>
-                <span>Need Help?</span>
-            </a>
-
             <button class="logout-button" id="logoutButton">
-                <span class="nav-icon">↪</span>
-                <span>Logout</span>
+                <span>↪</span>
+                Logout
             </button>
 
         </div>
@@ -88,41 +98,50 @@
 
 
     <!-- MOBILE OVERLAY -->
-
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 
     <!-- MAIN CONTENT -->
-
     <main class="main-content">
 
+
         <!-- HEADER -->
+        <header class="top-header">
 
-        <header class="dashboard-header">
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
 
-            <div class="header-left">
 
-                <button class="menu-toggle" id="menuToggle">
-                    ☰
-                </button>
+            <div class="header-title">
 
-                <div>
-                    <span class="header-label">STUDENT PORTAL</span>
-                    <h1>My Profile</h1>
-                </div>
+                <span>STUDENT PORTAL</span>
+
+                <h1>My Profile</h1>
 
             </div>
 
 
             <div class="header-profile">
 
-                <div class="mini-avatar">
-                    T
-                </div>
+                <div class="mini-profile">
 
-                <div class="mini-profile-info">
-                    <strong>Tooba Waheed</strong>
-                    <span>Computer Science</span>
+                    <div class="mini-avatar">
+                        T
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Tooba Waheed
+                        </strong>
+
+                        <span>
+                            Computer Science
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -130,17 +149,17 @@
         </header>
 
 
-        <!-- PAGE CONTENT -->
-
+        <!-- PROFILE CONTENT -->
         <section class="dashboard-content">
 
-            <!-- PROFILE HERO -->
 
+            <!-- PROFILE HERO -->
             <div class="profile-hero">
 
                 <div class="profile-avatar">
                     T
                 </div>
+
 
                 <div class="profile-hero-info">
 
@@ -148,43 +167,53 @@
                         STUDENT PROFILE
                     </span>
 
-                    <h2>Tooba Waheed</h2>
+                    <h2>
+                        Tooba Waheed
+                    </h2>
 
                     <p>
-                        Computer Science · Fall 2026
+                        MS Computer Science
                     </p>
 
-                    <span class="profile-status">
-                        Active Student
+                    <span>
+                        Fall 2026
                     </span>
 
                 </div>
+
+
+                <button class="profile-status" type="button">
+                    <span></span>
+                    Active Student
+                </button>
 
             </div>
 
 
             <!-- PROFILE GRID -->
-
             <div class="profile-grid">
 
 
                 <!-- PERSONAL INFORMATION -->
-
-                <div class="profile-card">
+                <section class="profile-card">
 
                     <div class="profile-card-heading">
 
+                        <div class="profile-heading-icon">
+                            P
+                        </div>
+
                         <div>
+
                             <span class="section-label">
                                 PERSONAL
                             </span>
 
-                            <h3>Personal Information</h3>
-                        </div>
+                            <h3>
+                                Personal Information
+                            </h3>
 
-                        <span class="profile-card-icon">
-                            P
-                        </span>
+                        </div>
 
                     </div>
 
@@ -193,61 +222,80 @@
 
                         <div class="profile-detail">
 
-                            <span>Full Name</span>
+                            <span>
+                                Full Name
+                            </span>
 
-                            <strong>Tooba Waheed</strong>
-
-                        </div>
-
-
-                        <div class="profile-detail">
-
-                            <span>Student ID</span>
-
-                            <strong>UC-2026-001</strong>
+                            <strong>
+                                Tooba Waheed
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Email Address</span>
+                            <span>
+                                Student ID
+                            </span>
 
-                            <strong>tooba@student.unicore.edu</strong>
+                            <strong>
+                                UC-2026-001
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Phone Number</span>
+                            <span>
+                                Email Address
+                            </span>
 
-                            <strong>+92 300 0000000</strong>
+                            <strong>
+                                tooba@student.unicore.edu
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Phone Number
+                            </span>
+
+                            <strong>
+                                +92 300 0000000
+                            </strong>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
 
                 <!-- ACADEMIC INFORMATION -->
-
-                <div class="profile-card">
+                <section class="profile-card">
 
                     <div class="profile-card-heading">
 
+                        <div class="profile-heading-icon">
+                            A
+                        </div>
+
                         <div>
+
                             <span class="section-label">
                                 ACADEMIC
                             </span>
 
-                            <h3>Academic Information</h3>
-                        </div>
+                            <h3>
+                                Academic Information
+                            </h3>
 
-                        <span class="profile-card-icon">
-                            A
-                        </span>
+                        </div>
 
                     </div>
 
@@ -256,61 +304,80 @@
 
                         <div class="profile-detail">
 
-                            <span>Program</span>
+                            <span>
+                                Program
+                            </span>
 
-                            <strong>MS Computer Science</strong>
-
-                        </div>
-
-
-                        <div class="profile-detail">
-
-                            <span>Department</span>
-
-                            <strong>Computer Science</strong>
+                            <strong>
+                                MS Computer Science
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Semester</span>
+                            <span>
+                                Department
+                            </span>
 
-                            <strong>Fall 2026</strong>
+                            <strong>
+                                Computer Science
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Current GPA</span>
+                            <span>
+                                Semester
+                            </span>
 
-                            <strong>3.38 / 4.00</strong>
+                            <strong>
+                                Fall 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Current GPA
+                            </span>
+
+                            <strong>
+                                3.38 / 4.00
+                            </strong>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
 
                 <!-- CONTACT INFORMATION -->
-
-                <div class="profile-card">
+                <section class="profile-card">
 
                     <div class="profile-card-heading">
 
+                        <div class="profile-heading-icon">
+                            C
+                        </div>
+
                         <div>
+
                             <span class="section-label">
                                 CONTACT
                             </span>
 
-                            <h3>Contact Information</h3>
-                        </div>
+                            <h3>
+                                Contact Information
+                            </h3>
 
-                        <span class="profile-card-icon">
-                            C
-                        </span>
+                        </div>
 
                     </div>
 
@@ -319,61 +386,80 @@
 
                         <div class="profile-detail">
 
-                            <span>City</span>
+                            <span>
+                                City
+                            </span>
 
-                            <strong>Jhelum</strong>
-
-                        </div>
-
-
-                        <div class="profile-detail">
-
-                            <span>Country</span>
-
-                            <strong>Pakistan</strong>
+                            <strong>
+                                Jhelum
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Student Status</span>
+                            <span>
+                                Country
+                            </span>
 
-                            <strong>Active</strong>
+                            <strong>
+                                Pakistan
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Academic Year</span>
+                            <span>
+                                Student Status
+                            </span>
 
-                            <strong>2026</strong>
+                            <strong>
+                                Active
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Academic Year
+                            </span>
+
+                            <strong>
+                                2026
+                            </strong>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
 
                 <!-- ACCOUNT INFORMATION -->
-
-                <div class="profile-card">
+                <section class="profile-card">
 
                     <div class="profile-card-heading">
 
+                        <div class="profile-heading-icon">
+                            S
+                        </div>
+
                         <div>
+
                             <span class="section-label">
                                 ACCOUNT
                             </span>
 
-                            <h3>Account Information</h3>
-                        </div>
+                            <h3>
+                                Account Information
+                            </h3>
 
-                        <span class="profile-card-icon">
-                            S
-                        </span>
+                        </div>
 
                     </div>
 
@@ -382,7 +468,9 @@
 
                         <div class="profile-detail">
 
-                            <span>Account Status</span>
+                            <span>
+                                Account Status
+                            </span>
 
                             <strong class="account-active">
                                 Active
@@ -393,49 +481,68 @@
 
                         <div class="profile-detail">
 
-                            <span>Portal Access</span>
+                            <span>
+                                Access Level
+                            </span>
 
-                            <strong>Student</strong>
-
-                        </div>
-
-
-                        <div class="profile-detail">
-
-                            <span>Member Since</span>
-
-                            <strong>September 2026</strong>
+                            <strong>
+                                Student Portal
+                            </strong>
 
                         </div>
 
 
                         <div class="profile-detail">
 
-                            <span>Last Login</span>
+                            <span>
+                                Member Since
+                            </span>
 
-                            <strong>Today</strong>
+                            <strong>
+                                September 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-detail">
+
+                            <span>
+                                Last Login
+                            </span>
+
+                            <strong>
+                                Today
+                            </strong>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
             </div>
 
 
             <!-- ACADEMIC OVERVIEW -->
+            <section class="profile-overview">
 
-            <div class="profile-overview">
+                <div class="profile-card-heading">
 
-                <div class="profile-overview-heading">
+                    <div class="profile-heading-icon">
+                        O
+                    </div>
 
                     <div>
+
                         <span class="section-label">
-                            QUICK OVERVIEW
+                            OVERVIEW
                         </span>
 
-                        <h3>Academic Overview</h3>
+                        <h3>
+                            Academic Overview
+                        </h3>
+
                     </div>
 
                 </div>
@@ -445,75 +552,101 @@
 
                     <div class="overview-item">
 
-                        <span>Courses</span>
-                        <strong>06</strong>
-                        <small>Current semester</small>
+                        <span>
+                            Courses
+                        </span>
+
+                        <strong>
+                            06
+                        </strong>
 
                     </div>
 
 
                     <div class="overview-item">
 
-                        <span>Credits</span>
-                        <strong>18</strong>
-                        <small>Registered credits</small>
+                        <span>
+                            Credits
+                        </span>
+
+                        <strong>
+                            18
+                        </strong>
 
                     </div>
 
 
                     <div class="overview-item">
 
-                        <span>Attendance</span>
-                        <strong>92%</strong>
-                        <small>Overall attendance</small>
+                        <span>
+                            Attendance
+                        </span>
+
+                        <strong>
+                            92%
+                        </strong>
 
                     </div>
 
 
                     <div class="overview-item">
 
-                        <span>GPA</span>
-                        <strong>3.38</strong>
-                        <small>Current GPA</small>
+                        <span>
+                            GPA
+                        </span>
+
+                        <strong>
+                            3.38
+                        </strong>
 
                     </div>
 
                 </div>
 
-            </div>
+            </section>
 
 
             <!-- PROFILE NOTE -->
-
             <div class="profile-note">
 
-                <div class="profile-note-icon">
+                <div class="note-icon">
                     i
                 </div>
 
                 <div>
 
-                    <strong>Profile Information</strong>
+                    <strong>
+                        Profile Information
+                    </strong>
 
                     <p>
-                        Your profile information is displayed for
-                        demonstration purposes in this UniCore project.
-                        In a real student portal, this information would
-                        be managed through a secure university system.
+                        The information displayed on this page is
+                        demonstration data for the UniCore student
+                        management portal. A real university portal
+                        would use secure systems to manage student
+                        information.
                     </p>
 
                 </div>
 
             </div>
 
+
         </section>
 
 
         <!-- FOOTER -->
+        <footer class="portal-footer">
 
-        <footer class="dashboard-footer">
-            <span>© 2026 UniCore Student Portal</span>
-            <span>Learn. Grow. Achieve.</span>
+            <p>
+                © 2026 UniCore Student Portal.
+                All rights reserved.
+            </p>
+
+            <span>
+                Learn. Grow. Achieve.
+            </span>
+
         </footer>
 
     </main>
