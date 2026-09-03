@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help & Support | UniCore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="portal">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <h1>UniCore</h1>
+            <span>Student Portal</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span>Dashboard</span>
+            </a>
+
+            <a href="courses.html">
+                <span>Courses</span>
+            </a>
+
+            <a href="assignments.html">
+                <span>Assignments</span>
+            </a>
+
+            <a href="timetable.html">
+                <span>Timetable</span>
+            </a>
+
+            <a href="results.html">
+                <span>Results</span>
+            </a>
+
+            <a href="announcements.html">
+                <span>Announcements</span>
+            </a>
+
+            <a href="profile.html">
+                <span>Profile</span>
+            </a>
+
+            <a href="help.html" class="active">
+                <span>Help & Support</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-button" id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN AREA -->
+
+    <main class="main-area">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
+                </button>
+
+                <div>
+                    <span class="header-label">STUDENT PORTAL</span>
+                    <h2>Help & Support</h2>
+                </div>
+
+            </div>
+
+
+            <div class="mini-profile">
+
+                <div class="mini-avatar">
+                    TW
+                </div>
+
+                <div>
+                    <strong>Tooba Waheed</strong>
+                    <span>Computer Science</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="dashboard-content">
+
+            <div class="help-intro">
+
+                <div>
+                    <span class="section-label">SUPPORT CENTER</span>
+
+                    <h1>
+                        How can we help?
+                    </h1>
+
+                    <p>
+                        Find answers to common questions or contact
+                        UniCore support for assistance.
+                    </p>
+                </div>
+
+                <div class="help-intro-icon">
+                    ?
+                </div>
+
+            </div>
+
+
+            <!-- QUICK SUPPORT -->
+
+            <section class="help-quick-grid">
+
+                <div class="help-quick-card">
+
+                    <div class="help-icon">
+                        ?
+                    </div>
+
+                    <h3>Frequently Asked Questions</h3>
+
+                    <p>
+                        Find quick answers to common portal questions.
+                    </p>
+
+                    <button class="help-action" data-target="faqSection">
+                        View FAQs
+                    </button>
+
+                </div>
+
+
+                <div class="help-quick-card">
+
+                    <div class="help-icon">
+                        !
+                    </div>
+
+                    <h3>Technical Support</h3>
+
+                    <p>
+                        Having trouble using the student portal?
+                    </p>
+
+                    <button class="help-action" data-target="supportSection">
+                        Get Support
+                    </button>
+
+                </div>
+
+
+                <div class="help-quick-card">
+
+                    <div class="help-icon">
+                        @
+                    </div>
+
+                    <h3>Contact Support</h3>
+
+                    <p>
+                        Send your question or concern to the support team.
+                    </p>
+
+                    <button class="help-action" data-target="contactSection">
+                        Contact Us
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FAQ SECTION -->
+
+            <section class="help-section" id="faqSection">
+
+                <div class="help-section-heading">
+
+                    <div>
+                        <span class="section-label">FAQ</span>
+
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            How do I access my courses?
+
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            Open the Courses section from the sidebar
+                            to view your enrolled courses, instructors,
+                            credits and progress.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Where can I check my assignments?
+
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            Select Assignments from the sidebar to view
+                            pending, submitted and completed assignments.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            How can I view my timetable?
+
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            Open the Timetable section to view your
+                            weekly class schedule and upcoming classes.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Where can I see my academic results?
+
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            The Results section displays your courses,
+                            grades, credits and current GPA.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            How do I update my profile?
+
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            Open your Profile page to review your
+                            student information and academic details.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TECHNICAL SUPPORT -->
+
+            <section class="help-section" id="supportSection">
+
+                <div class="help-section-heading">
+
+                    <div>
+                        <span class="section-label">TECHNICAL SUPPORT</span>
+
+                        <h2>Common Technical Issues</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="support-list">
+
+                    <div class="support-item">
+
+                        <div class="support-number">
+                            01
+                        </div>
+
+                        <div>
+                            <h3>Portal is not loading</h3>
+
+                            <p>
+                                Check your internet connection and refresh
+                                the page. If the problem continues, contact
+                                support.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="support-item">
+
+                        <div class="support-number">
+                            02
+                        </div>
+
+                        <div>
+                            <h3>Login problem</h3>
+
+                            <p>
+                                Make sure your email and password are entered
+                                correctly before trying again.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="support-item">
+
+                        <div class="support-number">
+                            03
+                        </div>
+
+                        <div>
+                            <h3>Information looks incorrect</h3>
+
+                            <p>
+                                Contact the university administration if
+                                your academic or personal information needs
+                                to be corrected.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="help-section" id="contactSection">
+
+                <div class="help-section-heading">
+
+                    <div>
+                        <span class="section-label">CONTACT</span>
+
+                        <h2>Contact UniCore Support</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-support-card">
+
+                    <div class="contact-support-info">
+
+                        <h3>Need further assistance?</h3>
+
+                        <p>
+                            Send us your question and our support team
+                            will help you with your portal-related issue.
+                        </p>
+
+                    </div>
+
+
+                    <form id="supportForm" class="support-form">
+
+                        <div class="form-row">
+
+                            <div class="support-field">
+
+                                <label for="supportName">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="supportName"
+                                    value="Tooba Waheed"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="support-field">
+
+                                <label for="supportEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="supportEmail"
+                                    value="tooba@student.unicore.edu"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="support-field">
+
+                            <label for="supportMessage">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="supportMessage"
+                                rows="5"
+                                placeholder="Write your question or concern..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="support-submit"
+                        >
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 UniCore Student Portal. All rights reserved.
+                </p>
+
+                <span>
+                    Learn. Grow. Achieve.
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
