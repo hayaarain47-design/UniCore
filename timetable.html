@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable | UniCore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <h1>UniCore</h1>
+                <span>Student Portal</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link">
+                    <span class="nav-icon">▣</span>
+                    <span>Courses</span>
+                </a>
+
+                <a href="assignments.html" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="timetable.html" class="nav-link active">
+                    <span class="nav-icon">◷</span>
+                    <span>Timetable</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Results</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">●</span>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">◌</span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="help-link">
+                    Need Help?
+                </a>
+
+                <button class="logout-button" id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MOBILE OVERLAY -->
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-content">
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <div class="header-left">
+
+                    <button class="menu-toggle" id="menuToggle">
+                        ☰
+                    </button>
+
+                    <div>
+                        <span class="header-label">STUDENT PORTAL</span>
+                        <h2>Timetable</h2>
+                    </div>
+
+                </div>
+
+                <div class="header-profile">
+
+                    <div class="mini-profile">
+                        <strong>Tooba Waheed</strong>
+                        <span>Computer Science</span>
+                    </div>
+
+                    <div class="profile-avatar">
+                        TW
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="timetable-intro">
+
+                <div>
+                    <h2>Weekly Timetable</h2>
+                    <p>View your classes and academic schedule for the week.</p>
+                </div>
+
+                <div class="timetable-semester">
+                    <span>Current Semester</span>
+                    <strong>Fall 2026</strong>
+                </div>
+
+            </section>
+
+
+            <!-- TODAY CARD -->
+
+            <section class="today-class-card">
+
+                <div class="today-class-icon">
+                    TODAY
+                </div>
+
+                <div class="today-class-info">
+                    <span>Next Class</span>
+                    <h3>Advanced Database Systems</h3>
+                    <p>09:00 AM · Room 204 · Dr. Ahmed</p>
+                </div>
+
+                <div class="today-class-time">
+                    <strong>09:00</strong>
+                    <span>AM</span>
+                </div>
+
+            </section>
+
+
+            <!-- WEEKLY SCHEDULE -->
+
+            <section class="timetable-section">
+
+                <div class="timetable-heading">
+
+                    <div>
+                        <h3>Class Schedule</h3>
+                        <p>Fall 2026 weekly academic schedule.</p>
+                    </div>
+
+                    <button class="print-timetable" id="printTimetable">
+                        Print Timetable
+                    </button>
+
+                </div>
+
+
+                <div class="timetable-wrapper">
+
+                    <table class="timetable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="time-cell">
+                                    09:00 AM
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Advanced Database Systems</strong>
+                                        <span>Room 204</span>
+                                        <small>Dr. Ahmed</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Research Methodology</strong>
+                                        <span>Room 201</span>
+                                        <small>Dr. Fatima</small>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="time-cell">
+                                    10:00 AM
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Computer Networks</strong>
+                                        <span>Room 105</span>
+                                        <small>Dr. Ali</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="time-cell">
+                                    11:00 AM
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Artificial Intelligence</strong>
+                                        <span>Lab 03</span>
+                                        <small>Dr. Hassan</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="time-cell">
+                                    02:00 PM
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Advanced Programming</strong>
+                                        <span>Lab 02</span>
+                                        <small>Mr. Hamza</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box">
+                                        <strong>Software Engineering</strong>
+                                        <span>Room 108</span>
+                                        <small>Ms. Sara</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="class-box empty">
+                                        —
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEEKLY NOTES -->
+
+            <section class="schedule-notes">
+
+                <div class="schedule-note">
+                    <strong>Class Duration</strong>
+                    <span>Each class is scheduled for approximately 90 minutes.</span>
+                </div>
+
+                <div class="schedule-note">
+                    <strong>Important</strong>
+                    <span>Check announcements regularly for any schedule changes.</span>
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+                <p>© 2026 UniCore Student Portal. Learn. Grow. Achieve.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
