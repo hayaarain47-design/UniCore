@@ -401,3 +401,21 @@ announcementReadButtons.forEach(function (button) {
     });
 
 });
+/* =========================================
+   PROFILE PAGE
+========================================= */
+
+const profileStatus = document.querySelector(".profile-status");
+
+if (profileStatus) {
+
+    profileStatus.addEventListener("click", function () {
+
+        alert(
+            "Account Status\n\n" +
+            "Your UniCore student account is currently active."
+        );
+
+    });
+
+}
