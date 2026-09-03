@@ -2,429 +2,480 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dashboard | UniCore</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body class="dashboard-body">
 
-    <div class="dashboard-layout">
+<body>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar" id="sidebar">
+<div class="dashboard-layout">
 
-            <div class="sidebar-brand">
 
-                <div class="brand-logo">U</div>
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-mark">
+                U
+            </div>
+
+            <div>
+                <h2>UniCore</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item active">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="courses.html" class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Courses</span>
+
+            </a>
+
+
+            <a href="assignments.html" class="nav-item">
+
+                <span class="nav-icon">✓</span>
+
+                <span>Assignments</span>
+
+            </a>
+
+
+            <a href="timetable.html" class="nav-item">
+
+                <span class="nav-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+            <a href="results.html" class="nav-item">
+
+                <span class="nav-icon">▤</span>
+
+                <span>Results</span>
+
+            </a>
+
+
+            <a href="announcements.html" class="nav-item">
+
+                <span class="nav-icon">●</span>
+
+                <span>Announcements</span>
+
+            </a>
+
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">◯</span>
+
+                <span>Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+
+                <span class="nav-icon">?</span>
+
+                <span>Need Help?</span>
+
+            </a>
+
+
+            <button class="logout-button" id="logoutButton">
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MOBILE OVERLAY
+    ========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle">
+
+                    ☰
+
+                </button>
+
 
                 <div>
-                    <h2>UniCore</h2>
-                    <span>LEARN. GROW. ACHIEVE.</span>
+
+                    <span class="header-label">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
                 </div>
 
             </div>
 
 
-            <nav class="sidebar-nav">
+            <div class="header-profile">
 
-                <a href="dashboard.html" class="nav-link active">
-                    <span class="nav-icon">⌂</span>
-                    <span>Dashboard</span>
-                </a>
-
-                <a href="courses.html" class="nav-link">
-                    <span class="nav-icon">▦</span>
-                    <span>Courses</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">✓</span>
-                    <span>Assignments</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◷</span>
-                    <span>Timetable</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">▤</span>
-                    <span>Results & GPA</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">◉</span>
-                    <span>Announcements</span>
-                </a>
-
-                <a href="#" class="nav-link">
-                    <span class="nav-icon">○</span>
-                    <span>My Profile</span>
-                </a>
-
-            </nav>
+                <div class="mini-avatar">
+                    T
+                </div>
 
 
-            <div class="sidebar-bottom">
+                <div class="mini-profile-info">
 
-                <a href="#" class="help-link">
-                    <span class="nav-icon">?</span>
-                    <span>Need Help?</span>
-                </a>
+                    <strong>
+                        Tooba Waheed
+                    </strong>
 
-                <button class="logout-btn" id="logoutBtn">
-                    <span>↪</span>
-                    <span>Logout</span>
-                </button>
+                    <span>
+                        Computer Science
+                    </span>
+
+                </div>
 
             </div>
 
-        </aside>
+        </header>
 
 
-        <!-- MOBILE OVERLAY -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- =========================================
+             DASHBOARD CONTENT
+        ========================================== -->
+
+        <section class="dashboard-content">
 
 
-        <!-- MAIN -->
-        <main class="dashboard-main">
+            <!-- WELCOME CARD -->
 
-            <!-- HEADER -->
-            <header class="dashboard-header">
+            <div class="welcome-card">
 
-                <button class="menu-toggle" id="menuToggle">
-                    ☰
-                </button>
+                <div class="welcome-content">
 
-                <div class="header-title">
+                    <span class="section-label">
+                        WELCOME BACK
+                    </span>
 
-                    <span>STUDENT PORTAL</span>
+                    <h2>
+                        Hello, Tooba!
+                    </h2>
 
-                    <h1>Dashboard</h1>
+                    <p>
+                        Stay organized, keep learning and make
+                        progress toward your academic goals.
+                    </p>
 
                 </div>
 
 
-                <div class="header-profile">
+                <div class="welcome-date">
 
-                    <button class="notification-btn">
-                        ♢
-                    </button>
+                    <span>
+                        Academic Year
+                    </span>
 
-                    <div class="student-mini-profile">
+                    <strong>
+                        2026
+                    </strong>
 
-                        <div class="mini-avatar">
-                            TW
-                        </div>
+                </div>
 
-                        <div>
+            </div>
 
-                            <strong>Tooba Waheed</strong>
 
-                            <small>
-                                Computer Science
-                            </small>
 
-                        </div>
+            <!-- =========================================
+                 STATS
+            ========================================== -->
 
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        C
                     </div>
-
-                </div>
-
-            </header>
-
-
-            <!-- DASHBOARD CONTENT -->
-            <section class="dashboard-content">
-
-
-                <!-- WELCOME -->
-                <div class="welcome-card">
 
                     <div>
 
-                        <span>WELCOME BACK</span>
+                        <span>
+                            Enrolled Courses
+                        </span>
 
-                        <h2>
-                            Hello, Tooba!
-                        </h2>
+                        <strong>
+                            06
+                        </strong>
 
-                        <p>
-                            Here's what's happening with your academic journey today.
-                        </p>
-
-                    </div>
-
-                    <div class="welcome-date">
-                        <span>ACADEMIC YEAR</span>
-                        <strong>2026</strong>
                     </div>
 
                 </div>
 
 
-                <!-- STATISTICS -->
-                <div class="stats-grid">
 
+                <div class="stat-card">
 
-                    <div class="stat-card">
-
-                        <div class="stat-icon">
-                            ▦
-                        </div>
-
-                        <div>
-                            <span>Enrolled Courses</span>
-                            <strong>06</strong>
-                        </div>
-
+                    <div class="stat-icon">
+                        A
                     </div>
 
+                    <div>
 
-                    <div class="stat-card">
+                        <span>
+                            Assignments
+                        </span>
 
-                        <div class="stat-icon">
-                            ✓
-                        </div>
-
-                        <div>
-                            <span>Assignments</span>
-                            <strong>04</strong>
-                        </div>
+                        <strong>
+                            04
+                        </strong>
 
                     </div>
-
-
-                    <div class="stat-card">
-
-                        <div class="stat-icon">
-                            ◷
-                        </div>
-
-                        <div>
-                            <span>Attendance</span>
-                            <strong>92%</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat-card">
-
-                        <div class="stat-icon">
-                            ★
-                        </div>
-
-                        <div>
-                            <span>Current GPA</span>
-                            <strong>3.38</strong>
-                        </div>
-
-                    </div>
-
 
                 </div>
 
 
-                <!-- TWO COLUMN AREA -->
-                <div class="dashboard-columns">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        %
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Attendance
+                        </span>
+
+                        <strong>
+                            92%
+                        </strong>
+
+                    </div>
+
+                </div>
 
 
-                    <!-- TODAY'S CLASSES -->
-                    <div class="dashboard-card">
 
-                        <div class="card-heading">
+                <div class="stat-card">
 
-                            <div>
-                                <span>ACADEMIC SCHEDULE</span>
-                                <h3>Today's Classes</h3>
-                            </div>
+                    <div class="stat-icon">
+                        G
+                    </div>
 
-                            <a href="#">
-                                View timetable
-                            </a>
+                    <div>
+
+                        <span>
+                            Current GPA
+                        </span>
+
+                        <strong>
+                            3.38
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DASHBOARD COLUMNS
+            ========================================== -->
+
+            <div class="dashboard-columns">
+
+
+                <!-- TODAY'S CLASSES -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                SCHEDULE
+                            </span>
+
+                            <h3>
+                                Today's Classes
+                            </h3>
 
                         </div>
+
+                        <a href="timetable.html">
+                            View Schedule
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="class-list">
 
 
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>09:00</strong>
-                                <span>AM</span>
+
+                                <strong>
+                                    09:00
+                                </strong>
+
+                                <span>
+                                    AM
+                                </span>
+
                             </div>
+
 
                             <div class="class-info">
 
-                                <h4>
+                                <strong>
                                     Advanced Database Systems
-                                </h4>
+                                </strong>
 
-                                <p>
+                                <span>
                                     Room 204 · Dr. Ahmed
-                                </p>
+                                </span>
 
                             </div>
 
-                            <span class="class-status">
-                                Upcoming
-                            </span>
-
                         </div>
+
 
 
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>11:00</strong>
-                                <span>AM</span>
+
+                                <strong>
+                                    11:00
+                                </strong>
+
+                                <span>
+                                    AM
+                                </span>
+
                             </div>
+
 
                             <div class="class-info">
 
-                                <h4>
+                                <strong>
                                     Artificial Intelligence
-                                </h4>
+                                </strong>
 
-                                <p>
+                                <span>
                                     Lab 03 · Dr. Hassan
-                                </p>
+                                </span>
 
                             </div>
 
-                            <span class="class-status">
-                                Upcoming
-                            </span>
-
                         </div>
+
 
 
                         <div class="class-item">
 
                             <div class="class-time">
-                                <strong>02:00</strong>
-                                <span>PM</span>
+
+                                <strong>
+                                    02:00
+                                </strong>
+
+                                <span>
+                                    PM
+                                </span>
+
                             </div>
+
 
                             <div class="class-info">
 
-                                <h4>
+                                <strong>
                                     Software Engineering
-                                </h4>
+                                </strong>
 
-                                <p>
+                                <span>
                                     Room 108 · Ms. Sara
-                                </p>
+                                </span>
 
-                            </div>
-
-                            <span class="class-status">
-                                Later
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ASSIGNMENTS -->
-                    <div class="dashboard-card">
-
-                        <div class="card-heading">
-
-                            <div>
-                                <span>YOUR WORK</span>
-                                <h3>Upcoming Assignments</h3>
-                            </div>
-
-                            <a href="#">
-                                View all
-                            </a>
-
-                        </div>
-
-
-                        <div class="assignment-item">
-
-                            <div class="assignment-icon">
-                                DB
-                            </div>
-
-                            <div class="assignment-info">
-
-                                <h4>
-                                    Database Project
-                                </h4>
-
-                                <p>
-                                    Advanced Database Systems
-                                </p>
-
-                            </div>
-
-                            <div class="assignment-date">
-                                <span>Due</span>
-                                <strong>Sep 08</strong>
-                            </div>
-
-                        </div>
-
-
-                        <div class="assignment-item">
-
-                            <div class="assignment-icon">
-                                AI
-                            </div>
-
-                            <div class="assignment-info">
-
-                                <h4>
-                                    AI Research Task
-                                </h4>
-
-                                <p>
-                                    Artificial Intelligence
-                                </p>
-
-                            </div>
-
-                            <div class="assignment-date">
-                                <span>Due</span>
-                                <strong>Sep 11</strong>
-                            </div>
-
-                        </div>
-
-
-                        <div class="assignment-item">
-
-                            <div class="assignment-icon">
-                                SE
-                            </div>
-
-                            <div class="assignment-info">
-
-                                <h4>
-                                    Software Design
-                                </h4>
-
-                                <p>
-                                    Software Engineering
-                                </p>
-
-                            </div>
-
-                            <div class="assignment-date">
-                                <span>Due</span>
-                                <strong>Sep 15</strong>
                             </div>
 
                         </div>
@@ -434,78 +485,298 @@
                 </div>
 
 
-                <!-- PROGRESS + ANNOUNCEMENT -->
-                <div class="dashboard-columns bottom-columns">
+
+                <!-- UPCOMING ASSIGNMENTS -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                DEADLINES
+                            </span>
+
+                            <h3>
+                                Upcoming Assignments
+                            </h3>
+
+                        </div>
+
+                        <a href="assignments.html">
+                            View All
+                        </a>
+
+                    </div>
 
 
-                    <!-- PROGRESS -->
-                    <div class="dashboard-card">
 
-                        <div class="card-heading">
+                    <div class="assignment-list">
+
+
+                        <div class="assignment-item">
 
                             <div>
-                                <span>ACADEMIC PERFORMANCE</span>
-                                <h3>Semester Progress</h3>
+
+                                <strong>
+                                    Database Project
+                                </strong>
+
+                                <span>
+                                    Advanced Database Systems
+                                </span>
+
                             </div>
 
-                            <strong class="semester-progress">
+                            <time>
+                                Sep 08
+                            </time>
+
+                        </div>
+
+
+
+                        <div class="assignment-item">
+
+                            <div>
+
+                                <strong>
+                                    AI Research Task
+                                </strong>
+
+                                <span>
+                                    Artificial Intelligence
+                                </span>
+
+                            </div>
+
+                            <time>
+                                Sep 11
+                            </time>
+
+                        </div>
+
+
+
+                        <div class="assignment-item">
+
+                            <div>
+
+                                <strong>
+                                    Software Design
+                                </strong>
+
+                                <span>
+                                    Software Engineering
+                                </span>
+
+                            </div>
+
+                            <time>
+                                Sep 15
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STUDY REMINDERS
+            ========================================== -->
+
+            <div class="study-reminders">
+
+
+                <div class="reminders-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            STAY ORGANIZED
+                        </span>
+
+                        <h3>
+                            Study Reminders
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        class="add-reminder-button"
+                        id="addReminderButton">
+
+                        + Add Reminder
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REMINDER FORM -->
+
+                <div
+                    class="reminder-form"
+                    id="reminderForm">
+
+                    <input
+                        type="text"
+                        id="reminderInput"
+                        placeholder="Enter your study reminder..."
+                    >
+
+
+                    <button
+                        id="saveReminderButton">
+
+                        Save
+
+                    </button>
+
+
+                    <button
+                        class="cancel-reminder"
+                        id="cancelReminderButton">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REMINDERS LIST -->
+
+                <div
+                    class="reminders-list"
+                    id="remindersList">
+
+
+                    <div class="reminder-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span>
+                                Review Database Systems notes
+                            </span>
+
+                        </label>
+
+                        <span class="reminder-time">
+                            Today
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="reminder-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span>
+                                Prepare AI research topic
+                            </span>
+
+                        </label>
+
+                        <span class="reminder-time">
+                            Tomorrow
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="reminder-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span>
+                                Revise Software Engineering
+                            </span>
+
+                        </label>
+
+                        <span class="reminder-time">
+                            Sep 06
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SEMESTER PROGRESS
+            ========================================== -->
+
+            <div class="dashboard-card progress-dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACADEMIC PERFORMANCE
+                        </span>
+
+                        <h3>
+                            Semester Progress
+                        </h3>
+
+                    </div>
+
+                    <strong class="overall-progress">
+                        68%
+                    </strong>
+
+                </div>
+
+
+
+                <div class="progress-list">
+
+
+                    <div class="progress-row">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Overall Progress
+                            </span>
+
+                            <strong>
                                 68%
                             </strong>
 
                         </div>
 
 
-                        <div class="overall-progress">
+                        <div class="progress-track">
 
-                            <div class="progress-label">
-                                <span>Overall Course Progress</span>
-                                <strong>68%</strong>
-                            </div>
-
-                            <div class="large-progress-bar">
-                                <span style="width: 68%;"></span>
-                            </div>
-
-                        </div>
-
-
-                        <div class="progress-subject">
-
-                            <div>
-                                <span>Assignments</span>
-                                <strong>75%</strong>
-                            </div>
-
-                            <div class="small-progress">
-                                <span style="width: 75%;"></span>
-                            </div>
-
-                        </div>
-
-
-                        <div class="progress-subject">
-
-                            <div>
-                                <span>Attendance</span>
-                                <strong>92%</strong>
-                            </div>
-
-                            <div class="small-progress">
-                                <span style="width: 92%;"></span>
-                            </div>
-
-                        </div>
-
-
-                        <div class="progress-subject">
-
-                            <div>
-                                <span>Course Completion</span>
-                                <strong>68%</strong>
-                            </div>
-
-                            <div class="small-progress">
-                                <span style="width: 68%;"></span>
+                            <div
+                                class="progress-fill"
+                                style="width: 68%;">
                             </div>
 
                         </div>
@@ -513,76 +784,164 @@
                     </div>
 
 
-                    <!-- ANNOUNCEMENT -->
-                    <div class="dashboard-card announcement-card">
 
-                        <div class="card-heading">
+                    <div class="progress-row">
 
-                            <div>
-                                <span>UNIVERSITY UPDATES</span>
-                                <h3>Latest Announcement</h3>
-                            </div>
+                        <div class="progress-label">
 
-                        </div>
+                            <span>
+                                Assignments
+                            </span>
 
-
-                        <div class="announcement-content">
-
-                            <div class="announcement-icon">
-                                !
-                            </div>
-
-                            <div>
-
-                                <h4>
-                                    Mid-Semester Assessments
-                                </h4>
-
-                                <p>
-                                    Mid-semester assessments will begin
-                                    from September 21, 2026.
-                                </p>
-
-                                <small>
-                                    Posted 2 days ago
-                                </small>
-
-                            </div>
+                            <strong>
+                                75%
+                            </strong>
 
                         </div>
 
 
-                        <a href="#" class="announcement-link">
-                            View all announcements →
-                        </a>
+                        <div class="progress-track">
+
+                            <div
+                                class="progress-fill"
+                                style="width: 75%;">
+                            </div>
+
+                        </div>
 
                     </div>
+
+
+
+                    <div class="progress-row">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Attendance
+                            </span>
+
+                            <strong>
+                                92%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-track">
+
+                            <div
+                                class="progress-fill"
+                                style="width: 92%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="progress-row">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Course Completion
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-track">
+
+                            <div
+                                class="progress-fill"
+                                style="width: 68%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 LATEST ANNOUNCEMENT
+            ========================================== -->
+
+            <div class="announcement-card dashboard-announcement">
+
+                <div class="announcement-icon">
+                    !
+                </div>
+
+
+                <div class="announcement-content">
+
+                    <span class="section-label">
+                        LATEST ANNOUNCEMENT
+                    </span>
+
+                    <h3>
+                        Mid-Semester Assessments
+                    </h3>
+
+                    <p>
+                        Mid-semester assessments will begin from
+                        September 21, 2026. Please review your
+                        course schedules and prepare accordingly.
+                    </p>
 
                 </div>
 
 
-                <!-- FOOTER -->
-                <footer class="dashboard-footer">
+                <a
+                    href="announcements.html"
+                    class="announcement-link">
 
-                    <p>
-                        © 2026 UniCore. Learn. Grow. Achieve.
-                    </p>
+                    View All
 
-                    <span>
-                        Student Management Portal
-                    </span>
+                </a>
 
-                </footer>
+            </div>
 
 
-            </section>
-
-        </main>
-
-    </div>
+        </section>
 
 
-    <script src="script.js"></script>
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 UniCore Student Portal
+            </span>
+
+            <span>
+                Learn. Grow. Achieve.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 
