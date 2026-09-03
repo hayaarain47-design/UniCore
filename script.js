@@ -136,3 +136,68 @@ if (logoutBtn) {
     });
 
 }
+// =========================================
+// COURSES PAGE FUNCTIONALITY
+// =========================================
+
+const courseSearch = document.getElementById("courseSearch");
+const coursesGrid = document.getElementById("coursesGrid");
+const noCourses = document.getElementById("noCourses");
+
+if (courseSearch && coursesGrid) {
+
+    courseSearch.addEventListener("input", function () {
+
+        const searchValue = this.value.toLowerCase().trim();
+        const courseCards = coursesGrid.querySelectorAll(".course-card");
+
+        let visibleCourses = 0;
+
+        courseCards.forEach(function (card) {
+
+            const courseText = card.textContent.toLowerCase();
+
+            if (courseText.includes(searchValue)) {
+                card.style.display = "";
+                visibleCourses++;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (noCourses) {
+            noCourses.style.display =
+                visibleCourses === 0 ? "block" : "none";
+        }
+
+    });
+}
+
+
+// =========================================
+// COURSE BUTTONS
+// =========================================
+
+const courseButtons = document.querySelectorAll(".course-button");
+
+courseButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const courseCard = this.closest(".course-card");
+
+        if (!courseCard) return;
+
+        const courseName =
+            courseCard.querySelector("h4")?.textContent || "this course";
+
+        alert(
+            "Course Details\n\n" +
+            courseName +
+            "\n\nMore course details will be available in the next portal update."
+        );
+
+    });
+
+});
