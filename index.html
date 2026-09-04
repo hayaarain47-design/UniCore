@@ -10,669 +10,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        /* =========================================
-           UNICORE LOGIN PAGE ONLY
-           ========================================= */
-
-        body.login-body {
-            margin: 0;
-            min-height: 100vh;
-
-            background-image:
-                linear-gradient(
-                    rgba(7, 24, 45, 0.68),
-                    rgba(7, 24, 45, 0.78)
-                ),
-                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=90");
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
-            font-family: "DM Sans", sans-serif;
-        }
-
-
-        /* Main page */
-
-        .login-page {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 35px 20px;
-
-            box-sizing: border-box;
-        }
-
-
-        /* Hide old split-screen section */
-
-        .login-visual {
-            display: none !important;
-        }
-
-
-        /* Login section */
-
-        .login-section {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        /* White professional card */
-
-        .login-box {
-            width: 100%;
-            max-width: 650px;
-
-            background: rgba(255, 255, 255, 0.97);
-
-            border-radius: 22px;
-
-            padding: 45px 52px;
-
-            box-sizing: border-box;
-
-            box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.30);
-
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-
-
-        /* Brand */
-
-        .mobile-brand {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 13px;
-
-            margin-bottom: 28px;
-        }
-
-
-        .mobile-brand .brand-logo {
-            width: 52px;
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #0b2a4a;
-            color: white;
-
-            border-radius: 13px;
-
-            font-size: 25px;
-            font-weight: 700;
-
-            box-shadow: 0 8px 20px rgba(11, 42, 74, 0.20);
-        }
-
-
-        .mobile-brand h1 {
-            margin: 0;
-
-            color: #0b2a4a;
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 32px;
-            line-height: 1.1;
-        }
-
-
-        .mobile-brand p {
-            margin: 4px 0 0;
-
-            color: #a08038;
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-        }
-
-
-        /* Intro */
-
-        .login-heading {
-            text-align: center;
-
-            margin-bottom: 32px;
-        }
-
-
-        .login-heading > span {
-            display: inline-block;
-
-            color: #a08038;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .login-heading h2 {
-            margin: 0 0 10px;
-
-            color: #102f4f;
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 28px;
-            line-height: 1.25;
-        }
-
-
-        .login-heading p {
-            max-width: 500px;
-
-            margin: 0 auto;
-
-            color: #687585;
-
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-
-        /* Form */
-
-        #loginForm {
-            width: 100%;
-        }
-
-
-        .form-group {
-            margin-bottom: 21px;
-        }
-
-
-        .form-group label {
-            display: block;
-
-            margin-bottom: 8px;
-
-            color: #25384d;
-
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-
-        .form-group input[type="email"],
-        .form-group input[type="password"],
-        .form-group input[type="text"] {
-            width: 100%;
-
-            height: 52px;
-
-            padding: 0 15px;
-
-            box-sizing: border-box;
-
-            border: 1px solid #d8dee6;
-
-            border-radius: 10px;
-
-            background: #f8fafc;
-
-            color: #1e3044;
-
-            font-family: "DM Sans", sans-serif;
-
-            font-size: 15px;
-
-            outline: none;
-
-            transition: all 0.2s ease;
-        }
-
-
-        .form-group input::placeholder {
-            color: #9aa5b1;
-        }
-
-
-        .form-group input:focus {
-            border-color: #315b82;
-
-            background: #ffffff;
-
-            box-shadow: 0 0 0 3px rgba(49, 91, 130, 0.10);
-        }
-
-
-        /* Password label */
-
-        .password-label {
-            display: flex;
-
-            align-items: center;
-            justify-content: space-between;
-
-            margin-bottom: 8px;
-        }
-
-
-        .password-label label {
-            margin: 0;
-        }
-
-
-        .password-label a {
-            color: #315b82;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            text-decoration: none;
-        }
-
-
-        .password-label a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* Password field */
-
-        .password-field {
-            position: relative;
-        }
-
-
-        .password-field input {
-            padding-right: 70px !important;
-        }
-
-
-        .password-toggle {
-            position: absolute;
-
-            right: 13px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            border: none;
-            background: transparent;
-
-            color: #315b82;
-
-            font-family: "DM Sans", sans-serif;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            padding: 5px;
-        }
-
-
-        .password-toggle:hover {
-            color: #0b2a4a;
-        }
-
-
-        /* Remember */
-
-        .remember-row {
-            margin: 2px 0 24px;
-        }
-
-
-        .remember-label {
-            display: flex !important;
-
-            align-items: center;
-
-            gap: 9px;
-
-            margin: 0 !important;
-
-            color: #596777 !important;
-
-            font-size: 13px !important;
-
-            font-weight: 500 !important;
-
-            cursor: pointer;
-        }
-
-
-        .remember-label input {
-            width: 16px;
-            height: 16px;
-
-            accent-color: #0b2a4a;
-
-            cursor: pointer;
-        }
-
-
-        /* Login button */
-
-        .login-btn {
-            width: 100%;
-
-            height: 53px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            background: #0b2a4a;
-
-            color: #ffffff;
-
-            font-family: "DM Sans", sans-serif;
-
-            font-size: 15px;
-            font-weight: 700;
-
-            letter-spacing: 0.3px;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease;
-        }
-
-
-        .login-btn:hover {
-            background: #123c64;
-
-            transform: translateY(-1px);
-
-            box-shadow: 0 9px 22px rgba(11, 42, 74, 0.20);
-        }
-
-
-        .login-btn:active {
-            transform: translateY(0);
-        }
-
-
-        /* Login message */
-
-        .login-message {
-            min-height: 20px;
-
-            margin: 13px 0 0;
-
-            text-align: center;
-
-            color: #315b82;
-
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-
-        /* Footer */
-
-        .login-footer {
-            text-align: center;
-
-            margin-top: 30px;
-
-            padding-top: 22px;
-
-            border-top: 1px solid #e6eaf0;
-        }
-
-
-        .login-footer p {
-            margin: 0 0 9px;
-
-            color: #788492;
-
-            font-size: 13px;
-        }
-
-
-        .login-footer a {
-            color: #315b82;
-
-            font-weight: 600;
-
-            text-decoration: none;
-        }
-
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-
-
-        .login-footer span {
-            color: #a0a8b1;
-
-            font-size: 12px;
-        }
-
-
-        /* =========================================
-           TABLET
-           ========================================= */
-
-        @media (max-width: 700px) {
-
-            .login-page {
-                padding: 25px 15px;
-            }
-
-
-            .login-box {
-                max-width: 580px;
-
-                padding: 38px 32px;
-            }
-
-
-            .mobile-brand h1 {
-                font-size: 29px;
-            }
-
-
-            .login-heading h2 {
-                font-size: 25px;
-            }
-
-        }
-
-
-        /* =========================================
-           MOBILE
-           ========================================= */
-
-        @media (max-width: 480px) {
-
-            body.login-body {
-                background-position: center;
-                background-attachment: scroll;
-            }
-
-
-            .login-page {
-                padding: 18px 12px;
-            }
-
-
-            .login-box {
-                padding: 30px 22px;
-
-                border-radius: 18px;
-            }
-
-
-            .mobile-brand {
-                margin-bottom: 23px;
-            }
-
-
-            .mobile-brand .brand-logo {
-                width: 45px;
-                height: 45px;
-
-                font-size: 21px;
-            }
-
-
-            .mobile-brand h1 {
-                font-size: 26px;
-            }
-
-
-            .mobile-brand p {
-                font-size: 9px;
-
-                letter-spacing: 1.5px;
-            }
-
-
-            .login-heading {
-                margin-bottom: 26px;
-            }
-
-
-            .login-heading > span {
-                font-size: 10px;
-            }
-
-
-            .login-heading h2 {
-                font-size: 23px;
-            }
-
-
-            .login-heading p {
-                font-size: 13px;
-
-                line-height: 1.6;
-            }
-
-
-            .form-group {
-                margin-bottom: 18px;
-            }
-
-
-            .form-group input[type="email"],
-            .form-group input[type="password"],
-            .form-group input[type="text"] {
-                height: 49px;
-
-                font-size: 14px;
-            }
-
-
-            .login-btn {
-                height: 50px;
-            }
-
-
-            .login-footer {
-                margin-top: 25px;
-                padding-top: 18px;
-            }
-
-        }
-
-    </style>
-
 </head>
-
 
 <body class="login-body">
 
-
     <div class="login-page">
 
-
-        <section class="login-section">
-
-
-            <div class="login-box">
+        <!-- BACKGROUND -->
+        <div class="login-background"></div>
+        <div class="login-overlay"></div>
 
 
-                <!-- BRAND -->
+        <!-- LOGIN CONTENT -->
+        <main class="login-content">
 
-                <div class="mobile-brand">
+            <!-- BRAND -->
+            <div class="login-brand">
 
-                    <div class="brand-logo">
-                        U
-                    </div>
+                <h1>UniCore</h1>
 
-                    <div>
+                <p>LEARN. GROW. ACHIEVE.</p>
 
-                        <h1>
-                            UniCore
-                        </h1>
-
-                        <p>
-                            LEARN. GROW. ACHIEVE.
-                        </p>
-
-                    </div>
-
-                </div>
+            </div>
 
 
-                <!-- INTRO -->
+            <!-- PORTAL INTRO -->
+            <div class="login-intro">
+
+                <span>
+                    STUDENT MANAGEMENT PORTAL
+                </span>
+
+                <h2>
+                    Your academic journey,
+                    <strong>all in one place.</strong>
+                </h2>
+
+                <p>
+                    Stay organized, keep track of your courses,
+                    assignments, results and academic progress.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN BOX -->
+            <section class="login-box">
 
                 <div class="login-heading">
 
-                    <span>
-                        STUDENT MANAGEMENT PORTAL
-                    </span>
+                    <span>WELCOME BACK</span>
 
-                    <h2>
-                        Your academic journey,
-                        all in one place.
-                    </h2>
+                    <h2>Student Login</h2>
 
                     <p>
-                        Stay organized, keep track of your courses,
-                        assignments, results and academic progress.
+                        Sign in to access your academic portal.
                     </p>
 
                 </div>
 
 
-                <!-- LOGIN FORM -->
-
                 <form id="loginForm">
 
-
                     <!-- EMAIL -->
-
                     <div class="form-group">
 
                         <label for="email">
@@ -683,7 +86,7 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Enter your student email"
+                            placeholder="Enter your email"
                             required
                         >
 
@@ -691,7 +94,6 @@
 
 
                     <!-- PASSWORD -->
-
                     <div class="form-group">
 
                         <div class="password-label">
@@ -700,10 +102,7 @@
                                 Password
                             </label>
 
-                            <a
-                                href="#"
-                                id="forgotPassword"
-                            >
+                            <a href="#" id="forgotPassword">
                                 Forgot Password?
                             </a>
 
@@ -733,8 +132,7 @@
                     </div>
 
 
-                    <!-- REMEMBER ME -->
-
+                    <!-- REMEMBER -->
                     <div class="remember-row">
 
                         <label class="remember-label">
@@ -754,7 +152,6 @@
 
 
                     <!-- LOGIN BUTTON -->
-
                     <button
                         type="submit"
                         class="login-btn"
@@ -763,29 +160,23 @@
                     </button>
 
 
-                    <!-- LOGIN MESSAGE -->
-
+                    <!-- MESSAGE -->
                     <p
                         id="loginMessage"
                         class="login-message"
                     ></p>
 
-
                 </form>
 
 
                 <!-- FOOTER -->
-
                 <div class="login-footer">
 
                     <p>
-
                         Need assistance?
-
                         <a href="#">
                             Contact Student Support
                         </a>
-
                     </p>
 
                     <span>
@@ -794,20 +185,14 @@
 
                 </div>
 
+            </section>
 
-            </div>
-
-
-        </section>
-
+        </main>
 
     </div>
 
 
-    <!-- EXISTING JAVASCRIPT -->
-
     <script src="script.js"></script>
-
 
 </body>
 
